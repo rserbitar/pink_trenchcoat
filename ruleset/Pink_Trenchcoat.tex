@@ -1,0 +1,83 @@
+\documentclass[10pt, a4paper,twocolumn, oneside]{book}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+%\usepackage{ps4pdf}
+\pagestyle{fancyplain}
+\usepackage[pdftex]{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{nicefrac}
+\usepackage{makecell}
+\usepackage{imakeidx}
+\usepackage{enumitem}
+\usepackage[margin=0.7in]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\pagecolor{black}
+\definecolor{lightgray}{gray}{0.2}
+\definecolor{darkgray}{gray}{0.8}
+\color{darkgray}
+
+
+%\usepackage{fetamont}
+%\usepackage[T1]{fontenc}
+\makeindex[columns=3, title=Alphabetical Index,intoc]
+
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+% \makeatletter
+% \renewcommand{\paragraph}{
+%   \@startsection{paragraph}{4}{\z@}%
+%   {-3.25ex\@plus -1ex \@minus -.2ex}%
+%   {0.5ex \@plus .2ex}%
+%   {\normalfont\normalsize\bfseries}}
+% \makeatother
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\title{Pink Trenchcoat \\ \small{a cyberpunk rule-set}}
+\author{Serbitar}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%\begin{abstract}
+
+% \end{abstract}
+\include{basics}
+\include{character}
+\include{computers}
+\include{magic}
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+\listoffigures
+\markboth{List of Tables}{List of Tables}
+\printindex
+
+\begin{appendix}
+    \chapter{Combat Tables}
+
+    \onecolumn
+
+
+    \begin{table}[htb]
+        \begin{minipage}[b]{0.5\linewidth}
+        \end{minipage}
+    \end{table}
+
+
+\end{appendix}
+
+
+\end{document}
