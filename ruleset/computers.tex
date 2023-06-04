@@ -770,10 +770,10 @@ This action allows a decker to \emph{write} any content to a \emph{File}.
 \subsection{Advanced Actions}
 
 \emph{Advanced Actions} require \emph{Tests} to perform and require a \emph{Program}
-to carry out. The standard \emph{Test} is:
+to carry out. The standard format of a \emph{Test} is given as:
 
 \begin{equation*}
-    \textit{Computers}(\textit{Program}) + \textit{Modifiers}
+    \textit{Skill}(\textit{Program}) + \textit{Test Modifier}
 \end{equation*}
 
 \myparagraph{Analyze [Node, Process, Stream, File]}
@@ -783,7 +783,7 @@ to carry out. The standard \emph{Test} is:
 \begin{tabular}{rl}
     \textbf{Program}       & Computer(Analyze)                   \\
     \textbf{Prerequisite}  & Found [Node, Process, Stream, File] \\
-    \textbf{Test Modifier} & Target \emph{Sleaze}                \\
+    \textbf{Test Modifier} & - Target \emph{Sleaze}              \\
     \textbf{Duration}      & 2s                                  \\
 \end{tabular}
 
@@ -850,7 +850,7 @@ remotely controlled car using \emph{Wheeled}.
     \textbf{Program}       & Crypt                                \\
     \textbf{Prerequisite}  & \emph{Accessed} \emph{Node}          \\
                            & \emph{File AID} or \emph{Stream AID} \\
-    \textbf{Test Modifier} & None                                 \\
+    \textbf{Test Modifier} & 0                                    \\
     \textbf{Duration}      & 1s                                   \\
 \end{tabular}
 
@@ -870,7 +870,7 @@ To read the content one needs either the key or try to \emph{Break} the encrypti
 \begin{tabular}{rl}
     \textbf{Program}       & Computer(Find)                                  \\
     \textbf{Prerequisite}  & \emph{Access} to origin/destination \emph{Node} \\
-    \textbf{Test Modifier} & \emph{Sleaze}                                   \\
+    \textbf{Test Modifier} & - Target \emph{Sleaze}                          \\
     \textbf{Duration}      & 10s                                             \\
 \end{tabular}
 
@@ -886,7 +886,7 @@ origin or the destination.
 \begin{tabular}{rl}
     \textbf{Program}       & Computer(Find)                                  \\
     \textbf{Prerequisite}  & \emph{Access} to origin/destination \emph{Node} \\
-    \textbf{Test Modifier} & \emph{Sleaze}                                   \\
+    \textbf{Test Modifier} & - Target \emph{Sleaze}                          \\
     \textbf{Duration}      & 10s                                             \\
 \end{tabular}
 
@@ -901,7 +901,7 @@ origin or the destination.
 \begin{tabular}{rl}
     \textbf{Program}       & Computer(Find)                                  \\
     \textbf{Prerequisite}  & \emph{Access} to origin/destination \emph{Node} \\
-    \textbf{Test Modifier} & \emph{Sleaze}                                   \\
+    \textbf{Test Modifier} & - Target \emph{Sleaze}                          \\
     \textbf{Duration}      & 10s                                             \\
 \end{tabular}
 
@@ -912,16 +912,19 @@ This action allows a decker to find \emph{Files} in a \emph{Node}.
 \subsection{Matrix Combat}
 \label{subsec:matrix combat}
 
+\emph{Actions} in this section directly harm \emph{Matrix Entities} either by
+damaging or slowing them. Most of the time, \emph{Processor} is an important
+\emph{Attribute} in \emph{Matrix Combat}.
 
 \myparagraph{Corrupt}
 \label{par:corrupt action}
 
 \begin{tabular}{rl}
-    \textbf{Program}       & Corrupt                              \\
+    \textbf{Program}       & Cyber Combat(Corrupt)                \\
     \textbf{Prerequisite}  & \emph{Accessed} \emph{Node}          \\
                            & \emph{File AID} or \emph{Stream AID} \\
                            & or Found [\emph{File}/\emph{Stream}] \\
-    \textbf{Test Modifier} & Originating \emph{Node} System       \\
+    \textbf{Test Modifier} & - Originating \emph{Node} System     \\
     \textbf{Duration}      & 1s                                   \\
 \end{tabular}
 
@@ -931,13 +934,16 @@ If a decker does not have the \emph{Access Right} to \emph{delete} a \emph{File}
 or \emph{Terminate} a \emph{Stream} the decker can \emph{corrupt} it so it becomes
 unusable.
 
-\begin{equation*}
-    \textit{TQ} = \textit{Cyber Combat(Corrupt) - System}
-\end{equation*}
-
 For each point of \emph{Test Quality} deal \emph{Processor} \emph{Matrix Damage}
 to the \emph{File} or \emph{Stream}.
 
+In addition each \emph{Corrupt Test} that can increase the deckers
+\emph{Security Tally}.
+The increase is given by:
+
+\begin{equation*}
+    \textit{Tally} = max(0, \textit{5fN} + \textit{System} - \textit{Sleaze})
+\end{equation*}
 
 \myparagraph{Crash}
 \label{par:crash}
@@ -945,7 +951,7 @@ to the \emph{File} or \emph{Stream}.
 \begin{tabular}{rl}
     \textbf{Program}       & Cyber Combat(Crash)                \\
     \textbf{Prerequisite}  & Found [\emph{Node}/\emph{Process}] \\
-    \textbf{Test Modifier} & System                             \\
+    \textbf{Test Modifier} & - System                           \\
     \textbf{Duration}      & 1s                                 \\
 \end{tabular}
 
@@ -954,6 +960,14 @@ to the \emph{File} or \emph{Stream}.
 For each point of \emph{Test Quality} deal \emph{Processor} \emph{Matrix Damage}
 to the \emph{Node} or \emph{Process}.
 
+In addition each \emph{Crash Test} that is targeting a \emph{Node}
+can increase the deckers \emph{Security Tally}.
+The increase is given by:
+
+\begin{equation*}
+    \textit{Tally} = max(0, 2 * \textit{5fN} + \textit{System} - \textit{Sleaze})
+\end{equation*}
+
 \myparagraph{Repair}
 \label{par:repair}
 
@@ -961,7 +975,7 @@ to the \emph{Node} or \emph{Process}.
 \begin{tabular}{rl}
     \textbf{Program}       & Computer(Medic) \\
     \textbf{Prerequisite}  & AID             \\
-    \textbf{Test Modifier} & None            \\
+    \textbf{Test Modifier} & 0               \\
     \textbf{Duration}      & 10s             \\
 \end{tabular}
 
@@ -978,9 +992,9 @@ to the target.
 
 
 \begin{tabular}{rl}
-    \textbf{Program}       & Hacking(Slow)                \\
+    \textbf{Program}       & Cyber Combat(Slow)           \\
     \textbf{Prerequisite}  & \emph{Access} to \emph{Node} \\
-    \textbf{Test Modifier} & System                       \\
+    \textbf{Test Modifier} & - System                     \\
     \textbf{Duration}      & 1s                           \\
 \end{tabular}
 
@@ -996,51 +1010,62 @@ later.
 
 
 \begin{tabular}{rl}
-    \textbf{Program}       & Hacking(Slow)        \\
-    \textbf{Prerequisite}  & Found \emph{Process} \\
-    \textbf{Test Modifier} & System               \\
-    \textbf{Duration}      & 1s                   \\
+    \textbf{Program}       & Cyber Combat(Slow)          \\
+    \textbf{Prerequisite}  & Found \emph{Process} or AID \\
+    \textbf{Test Modifier} & - System                    \\
+    \textbf{Duration}      & 1s                          \\
 \end{tabular}
 
 \hfill
 
-The \emph{Slow Action} allows a decker to force \emph{Actions} of a target
-\emph{Node} or \emph{Process} to take
-longer.
+The \emph{Slow Action} allows a decker to increase the \emph{Tick Cost} of
+\emph{Actions} a target \emph{Process}, including \emph{Personae} and \emph{Agents}.
+Increase Free, Simple, Half, Full Actions by 1,2,3,4 times the \emph{Test Quality}.
+Longer \emph{Action} get increased by 50\% for each point of \emph{TQ}.
+This effect lasts till the targets next \emph{Action}, or till the decker takes
+another \emph{Action}, whichever happens later.
 
-\subsection{Cracking}
+\subsection{Hacking}
 
 \myparagraph{Break}
 \label{par:break}
 
 \begin{tabular}{rl}
-    \textbf{Program}       & Break                             \\
-    \textbf{Prerequisite}  & Found [\emph{File}/\emph{Stream}] \\
-    \textbf{Test Modifier} & Crypt Rating +3                   \\
-    \textbf{Duration}      & 20s                               \\
+    \textbf{Program}       & Hacking(Break)                               \\
+    \textbf{Prerequisite}  & \emph{Read File}                             \\
+    \textbf{Test Modifier} & - Crypt Rating -3                            \\
+    \textbf{Duration}      & $10 * \textit{max}(1, \textit{5fN})$ seconds \\
 \end{tabular}
 
 \hfill
 
+A successful \emph{Break} \emph{Test} removes the \emph{Encryption} from a
+\emph{File}. The \emph{Duration} is determined by the \emph{5fN} roll of the
+\emph{Game Master} to a minimum of 10 seconds.
+
 \paragraph{Exploit}
 \index{Exploit}
 
-Every time a decker wants to perform an action where their \emph{Access Level}
+Every time a decker wants to perform an \emph{Action} where their \emph{Access Level}
 is not high enough, like \emph{Viewing} the security \emph{Log} without being
 at least \emph{Security} level, an \emph{Exploit} \emph{Test} is required.
 If the \emph{Action} in question requires a \emph{Test} itself,
-when for example \emph{Writing to a Stream}, the \emph{Exploit} test does not
+when for example \emph{Writing to a Stream}, the \emph{Exploit Test} does not
 replace the actual \emph{Test} but is an additional requirement.
 
-An Exploit test is an opposed test between the deckers \emph{Cracking(Exploit)} and
+An Exploit test is an opposed test between the deckers \emph{Hacking(Exploit)} and
 the \emph{Nodes} \emph{Firewall}.
 
 \begin{equation*}
-    \textit{Test Quality} = \textit{10fR} + \textit{Cracking(Exploit)} - \textit{Firewall}
+    \textit{Test Quality} = \textit{10fR} + \textit{Hacking(Exploit)} - \textit{Firewall}
 \end{equation*}
 
-In addition each Exploit test can increase the deckers \emph{Security Tally}.
+In addition each \emph{Exploit Test} can increase the deckers \emph{Security Tally}.
+The increase is given by:
 
+\begin{equation*}
+    \textit{Tally} = max(0, \textit{5fN} + \textit{System} - \textit{Sleaze})
+\end{equation*}
 
 \begin{table}[htb]
     \rowcolors{3}{}{lightgray}
@@ -1073,15 +1098,23 @@ A \emph{Physical Reboot} can only be done while having physical access to the
     \textit{Reboot Time} = \textit{Processor}^2 + \textit{seconds}
 \end{equation*}
 
-During a \emph{Physical Reboot} the Admin Account can be changed to whatever SIN
-or \emph{AID} the person that does the \emph{Reboot} desires.
+During a \emph{Physical Reboot} the Admin Account can be changed to whatever
+\emph{SIN(s)} or \emph{AID(s)} the person that does the \emph{Reboot} desires.
+
+While the \emph{Node} is rebooting all \emph{Processes} are \emph{Stopped}, all
+\emph{Streams} terminated, and all \emph{Subscriptions} are inactive. The
+\emph{Node} can not be accessed and all \emph{Processes} \emph{Accessing} the
+\emph{Node} are disconnected, maybe resulting in \emph{Dump Shock}.
+
+
+After the \emph{Reboot} all \emph{Matrix Damage} to \emph{Processes}, \emph{Files}
+and \emph{Streams} is removed.
 
 \myparagraph{Jack Out}
 \index{Jack Out}
 
 \myparagraph{Data Search}
 \index{Data Search}
-
 
 \subsection{Security Tally}
 \index{Security Tally}
@@ -1105,11 +1138,6 @@ or \emph{AID} the person that does the \emph{Reboot} desires.
     \end{tabular}
 \end{table}
 
-
-
-\begin{equation*}
-    \textit{Tally} = \textit{5fN} + \textit{System} - \textit{Sleaze}
-\end{equation*}
 
 \paragraph{Analyze ICE}
 
