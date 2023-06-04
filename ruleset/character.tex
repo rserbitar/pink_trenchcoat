@@ -7,44 +7,161 @@ but are currently not in scope of this rule-set.
 body in particular.
 
 \section{Attributes}
+\index{Atribute}
+
+\emph{Attributes} are very central values in defining a \emph{Character's}
+abilities. They give a broad description of a \emph{Character's} strengths and
+weaknesses and are influencing both final \emph{Skill} values as well as derived
+\emph{Characteristics}.
+
+The base value for most \emph{Attributes} of an average human is 8.
+
+\begin{table}[htb]
+    \rowcolors{1}{}{lightgray}
+    \caption[Attribute Values]{Attribute Values}
+    \label{tab:attribute values}
+    \centering
+    \begin{tabular}{cl}
+        \toprule
+        \textbf{Value} & \textbf{Description} \\
+        \midrule
+        < 4            & Disabled             \\
+        4-5            & Challenged           \\
+        6-7            & Underdeveloped       \\
+        8              & Average              \\
+        9-10           & Improved             \\
+        11-12          & Superior             \\
+        13-14          & Exemplar             \\
+        > 14           & Superhuman           \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\emph{Attribute} values in Pink Trenchcoat are logarithmic with a base of 3.
+This means that a \emph{Character} with \emph{Strength} 11 is twice as strong as a
+\emph{Character} with \emph{Strength} 8 which in turn is twice as strong as a
+\emph{Character} with \emph{Strength} 5.
+This fact is only influencing certain \emph{Characteristics} like
+\emph{Carrying Capacity} and does not need to be kept in mind in most situations.
+
+
 \subsection{Mental Attributes}
+Pink Trenchcoat uses four \emph{Mental Attributes}.
 \paragraph{Charisma}
 \index{Charisma}
+\emph{Charisma} describes a \emph{Character's} ability to positively affect other
+people in interactions. Highly charismatic people instantly get the attention of
+others, are often favored, and respected. A person with a low \emph{Charisma} value is
+often ignored and sometimes not taken seriously.
+\emph{Charisma} is also required to connect with people emotionally and understand
+emotional context of a conversation.
+
+\emph{Ware} is negatively affecting \emph{Charisma} as it detaches the \emph{Character}
+from itself.
 
 \paragraph{Inutition}
 \index{Intuition}
+\emph{Intuition} describes the \emph{Character's} ability to intuitively ans
+subconsciously process information. It describes not how fast or how much
+the \emph{Character} can process, but how well. Furthermore a high \emph{Intuition}
+value helps the \emph{Character} to grasp a situation faster and perceive better.
 
 \paragraph{Logic}
 \index{Logic}
+\emph{Logic} describes the raw processing power and storage capacity of a
+\emph{Character's} brain. Combined with \emph{Intuition}, both attributes form the
+\emph{Character's} IQ. A high \emph{Logic} value helps with most \emph{Craftsmanship}
+and all \emph{Knowledge Skills}.
 
 \paragraph{Willpower}
 \index{Willpower}
+\emph{Willpower} represents the amount of control the \emph{Character} has about
+their mind and body. How far they can force their body to go, and how well to
+withstand temptations of any kind. It is also a measure for courage.
 
 \subsection{Physical Attributes}
+
+Pink Trenchcoat uses four \emph{Physical Attributes}.
+
 \paragraph{Agility}
 \index{Agility}
 
+\emph{Agility} represents a \emph{Character's} nimbleness and dexterity. The motions
+of a \emph{Character} with high \emph{Agility} look fluid and smooth, while low
+\emph{Agility} motions look stocky. \emph{Agility} is important for all
+\emph{Close Combat} and most \emph{Physical Skills}. Larger \emph{Characters}
+normally have lower \emph{Agility}.
+
 \paragraph{Body}
 \index{Body}
+Body describes a \emph{Character's} ability to endure physical strain, and keep
+going, even when exhausted. It also influences how much \emph{Damage} the body can
+take before collapsing. \emph{Body} is independent of \emph{Size}, meaning that a
+large \emph{Character} does have the same average \emph{Body} as a smaller one.
 
 \paragraph{Coordination}
 \index{Coordination}
 
+\emph{Coordination} is the ability to control your body the way you want, especially
+hand-eye coordination. Although a \emph{Character's} body can be very agile, as long
+as the \emph{character} can not control it in the right way, it may not help much.
+\emph{Coordination} is important where the \emph{Character} works with his hands,
+like in \emph{Ranged Combat} or most \emph{Craftsmanship Skills}.
+
 \paragraph{Strength}
 \index{Strength}
+
+\emph{Strength} measures the raw power of a \emph{Character's} body, the pure muscle
+volume. Most \emph{Physical Skills} benefit from a high \emph{Strength} value.
+\emph{Strength} generally increases with \emph{Size}.
 
 \subsection{Other Attributes}
 \paragraph{Fate}
 \index{Fate}
+
+\emph{Fate} is a measure of a \emph{Character's} luck, the favour of the gods or their
+balance score with the universe itself. Or it is just a gamistic resource that can
+affect \emph{Tests}.
+
+\emph{Fate} refreshes every game session and can be used to modify \emph{Test} either
+before or after the roll. It can only be taken in high stake moments, that are critical
+for the story or the \emph{Character}. The \emph{Game Master} decides if this is the case.
+
+\subparagraph{Optional: Anomaly Ownership}
+\index{Anomaly Ownership}
+A \emph{Player} can also, by spending \emph{Fate}, take ownership of an \emph{Anomaly}
+they have rolled. This means that now the \emph{Player} instead of the
+\emph{Game Master} decides and describes what the special effects of the \emph{Anomaly} are.
+The \emph{Game Master} however needs to accept the effect and decides how much
+\emph{Fate} it costs.
+\begin{table}[htb]
+    \rowcolors{1}{}{lightgray}
+    \caption[Fate Costs]{Fate Costs}
+    \label{tab:fate costs}
+    \centering
+    \begin{tabular}{cl}
+        \toprule
+        \textbf{Value} & \textbf{Description} \\
+        \midrule
+        1              & +1 before            \\
+        3              & +2 before            \\
+        6              & +3 before            \\
+        4              & +1 after             \\
+        9              & +2 after             \\
+        1+             & own \emph{Anomaly}   \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
 \paragraph{Magic}
 \index{Magic}
 
-\paragraph{size}
+\paragraph{Size}
 \index{Size}
 
 \section{Characteristics}
 
-\section{Damage}
+\section{Health}
 
 \paragraph{Life}
 \index{Life}

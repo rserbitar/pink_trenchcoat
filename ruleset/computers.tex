@@ -117,88 +117,145 @@ are transformed into matrix commands.
 
 \subsection{Matrix Devices}
 
-The Matrix is made up of hardware that is processing and delivering it. Most notable are are
-the different pieces of hardware the matrix is running on. In general four different classes of
-matrix hardware can be found.
+The Matrix is made up of hardware that is processing and delivering it. Most
+notable are are the different pieces of hardware the matrix is running on. In
+general four different classes of matrix hardware can be found.
 
 \paragraph{Gadget}
 \index{Gadget}
-Gadgets are small and cheap pieces of hardware. Some of them are so cheap, they can be found in
-throwaway articles like food packaging. Others are powering small sensors or track positions. They
-range from pinhead size to coin size.
+Gadgets are small and cheap pieces of hardware. Some of them are so cheap, they
+can be found in throwaway articles like food packaging. Others are powering small
+sensors or track positions. They range from pinhead size to coin size.
 A typical person is carrying around dozens of them.
 
 \paragraph{Commlink}
 \index{Commlink}
-Commlinks are not only the most common mans to communicate but also a matrix hardware class.
-They are bigger than gadgets, but the smallest of them can fit into a bigger earring. The
-standard size is of an average playing card. They carry enough processing power to allow for at
-least \emph{Augmented Reality}.
+Commlinks are not only the most common mans to communicate but also a matrix
+hardware class. They are bigger than gadgets, but the smallest of them can fit
+into a bigger earring. The standard size is of an average playing card. They
+carry enough processing power to allow for at least \emph{Augmented Reality}.
 
 \paragraph{Cyberdeck}
 \index{Cyberdeck}
-Cyberdecks are a special form factor that only few people need. Much bigger than a an average
-commlink, about the size of a shoe-box, they pack much more processing power. Most cyberdecks are
-used for illegal purposes and are equipped with a \emph{Sleaze} module to avoid detection in the
-matrix.
+Cyberdecks are a special form factor that only few people need. Much bigger than
+a an average commlink, about the size of a shoe-box, they pack much more
+processing power. Most cyberdecks are used for illegal purposes and are equipped
+with a \emph{Sleaze} module to avoid detection in the matrix.
 
 \paragraph{Mainframe}
 \index{Mainframe}
-Mainframes are stationary pieces of matrix hardware. They range from shoe-box size to whole floors
-of a building. Mainframes are used to service multiple people or perform high performance
-computations.
+Mainframes are stationary pieces of matrix hardware. They range from shoe-box
+size to whole floors of a building. Mainframes are used to service multiple people
+or perform high performance computations.
 
 
 \subsection{Matrix Entities}
 
-Matrix entities are virtual building blocks of the matrix. Although they have a physical basis,
-they are purely virtual representations both in virtual- and augmented reality.
+Matrix entities are virtual building blocks of the matrix. Although they have a
+physical basis, they are purely virtual representations both in virtual- and
+augmented reality.
 
 \paragraph{Node}
 \index{Node}
 \label{par:node}
 
 A Node is a matrix entity with processing power. It has matrix location and can be
-\emph{accessed}. A Node can run \emph{Processes}, store \emph{Files} and be the origin or
-destination of a \emph{Stream}.
+\emph{accessed}. A Node can run \emph{Processes}, store \emph{Files} and be the
+origin or destination of a \emph{Stream}.
 
 \paragraph{Process}
 \index{Process}
 \label{par:process}
 
-Processes are matrix entities that actively perform actions. They are running on their origin
-\emph{Node}.
+Processes are matrix entities that actively perform actions. They are running on
+their origin \emph{Node}.
 
 \subparagraph{Persona}
 \index{Persona}
-A Persona is a special kind of \emph{Process} that represents a matrix user and their actions.
+A Persona is a special kind of \emph{Process} that represents a matrix user and
+their actions. \emph{Personae} can \emph{access} \emph{Nodes}. In this case they
+are connected to their \emph{origin Node} via a \emph{Stream}.
 
 \subparagraph{Program}
 \index{Program}
-A program is a piece of software that can be used by a \emph{Persona} or an \emph{Agent} as a tool
-to perform various actions. Programs are always attached to a \emph{Persona} or \emph{Agent}.
+A program is a piece of software that can be used by a \emph{Persona} or an
+\emph{Agent} as a tool to perform various actions. Programs are always attached
+to a \emph{Persona} or \emph{Agent}.
 
 \subparagraph{Agent}
 \index{Agent}
-An agent is a process that can perform autonomous decisions and use \emph{Programs} to perform
-actions. Agents can \emph{access} \emph{Nodes}.
+An agent is a process that can perform autonomous decisions and use \emph{Programs}
+to perform actions. \emph{Agents} can \emph{access} \emph{Nodes}. In this case they are
+connected to their \emph{origin Node} via a \emph{Stream}.
 
 \subparagraph{ICE}
 \index{ICE}
-ICE, or Intrusion Countermeasures, are \emph{Agents} with the special purpose to defend a node
-from hackers.
+ICE, or Intrusion Countermeasures, are \emph{Agents} with the special purpose to
+defend a node from hackers.
 
 \paragraph{Streams}
 \index{Stream}
 \label{par:stream}
 
-A stream connects two \emph{Nodes}, the origin and the destination, with a data connection.
-A stream also connects the \emph{Node} a \emph{Persona} or \emph{Agent} is running on with
-the \emph{Node} it is \emph{accessing}.
+A stream connects two \emph{Nodes}, the origin and the destination, with a data
+connection. A stream also connects the \emph{Node} a \emph{Persona} or \emph{Agent}
+is running on with the \emph{Node} it is \emph{accessing}.
 
 \paragraph{File}
 \index{File}
 \label{par:file}
+
+A \emph{File} is a coherent set of any kind of data.
+
+This includes:
+
+\begin{itemize}[parsep=0em]
+    \item a text document
+    \item a trideo clip
+    \item a BTL movie
+    \item a voice record
+\end{itemize}
+
+
+\subsection{Access Levels}
+\index{Access Level}
+\index{Account}
+
+In Pink Trenchcoat a decker that is \emph{accessing} a \emph{Node} is identified
+with a given \emph{Access Level}, or \emph{Account}. This \emph{Account} is
+specific to the \emph{Node} and linked to the deckers SIN or, in the case of
+\emph{Agents}, to their \emph{AID}.
+
+
+\paragraph{Anonymous}
+\index{Anonymous}
+\paragraph{User}
+\index{User}
+\paragraph{Security}
+\index{Security}
+\paragraph{Admin}
+\index{Admin}
+
+\subsection{Matrix Properties}
+\paragraph{Access Rights}
+\index{Access Rights}
+
+\paragraph{Access ID}
+\index{Access ID}
+\index{AID}
+
+\paragraph{Subscription List}
+\index{Subscription List}
+
+\paragraph{Logs}
+\index{Logs}
+
+The \emph{Logs} are a special \emph{File} that contains a history of all
+actions in a Node, including all actions of \emph{Personae} and \emph{Agents},
+their \emph{AIDs}, the \emph{Files} and \emph{Streams} the created and consumed
+and anything else that was done in the \emph{Node}. \emph{Actions} from a
+\emph{Process} that has a \emph{Sleaze} rating are only \emph{logged} when
+they have been successfully \emph{analyzed} by \emph{Analyze ICE}.
 
 \subsection{Matrix Attributes}
 
@@ -207,9 +264,9 @@ Each \emph{matrix device} has a number of attributes that define its properties 
 \paragraph{Processor}
 \index{Processor}
 
-The Processor attribute represents a \emph{Nodes} row computing power. As most
-devices are very advanced, a high Processor rating is not needed for most every
-day tasks. High Processor ratings are required for intensive tasks like processing
+The \emph{Processor} attribute represents a \emph{Nodes} row computing power. As most
+devices are very advanced, a high \emph{Processor} rating is not needed for most every
+day tasks. High \emph{Processor} ratings are required for intensive tasks like processing
 Sim-Sense signals for example when using \emph{Cold Sim} or the even more complex
 \emph{Hot Sim}. The attribute is also useful if a mainframe is supporting a large
 user base.
@@ -219,8 +276,8 @@ the opponents \emph{Node}.
 
 \hfill
 
-The Processor attribute is mostly related to a devices size. The bigger a device
-the higher its rating is on average.
+The \emph{Processor} attribute is mostly related to a \emph{Devices} size. The
+bigger a \emph{Device} the higher its rating is on average.
 
 \begin{table}[htb]
     \rowcolors{1}{}{lightgray}
@@ -346,10 +403,14 @@ Only nodes with wireless capabilities have a Signal rating.
 \paragraph{Sleaze}
 \index{Sleaze}
 
-Only devices equipped with with an illegal sleaze module have a Sleaze rating.
-The Sleaze rating allows a decker to hide from security software of a \emph{Node}.
+Only devices equipped with with an illegal \emph{Sleaze} module have a
+\emph{Sleaze} rating. The \emph{Sleaze} rating allows a decker to hide from
+security software of a \emph{Node}.
 Without it the decker would instantly be recognized after performing any kind of
 \emph{Exploit} action.
+
+A \emph{Sleaze} module allows also to broadcast and change (fake) SINs the decker
+possesses. The decker can not mimic arbitrary SINs.
 
 \section{Matrix Actions}
 
@@ -360,64 +421,369 @@ Without it the decker would instantly be recognized after performing any kind of
     \centering
     \begin{tabular}{ccllll}
         \toprule
-        \textbf{Account Level} & \textbf{Program} & \textbf{Node}                                 & \textbf{Process}              & \textbf{Stream}               & \textbf{File}    \\
+        \textbf{Account Level} & \textbf{Program} & \textbf{Node}                                                     & \textbf{Process}                                                & \textbf{Stream}                          & \textbf{File}                            \\
         \midrule
         \multirow{5}{*}[-2em]
-        {\textbf{Anonymous}}   & None             & \tabitem Access                               & \tabitem Command              & \tabitem Read                 & \tabitem Read    \\
+        {\textbf{Anonymous}}   & None             & \tabitem \hyperref[par:access node]{Anonymous Access}             &                                                                 &                                          &                                          \\
         \cmidrule{3-6}
-                               & Analyze          & \tabitem Analyze                              & \tabitem Analyze              & \tabitem Analyze              & \tabitem Analyze \\
+                               & Analyze          & \tabitem \hyperref[par:analyze]{Analyze}                          & \tabitem \hyperref[par:analyze]{Analyze}                        & \tabitem \hyperref[par:analyze]{Analyze} & \tabitem \hyperref[par:analyze]{Analyze} \\
         \cmidrule{3-6}
-                               & Break            &                                               &                               & \tabitem Break                & \tabitem Break   \\
+                               & Break            &                                                                   &                                                                 & \tabitem \hyperref[par:break]{Break }    & \tabitem \hyperref[par:break]{Break }    \\
         \cmidrule{3-6}
-                               & Corrupt          & \makecell[l]{\tabitem Crash                                                                                                      \\ \tabitem Slow} & \makecell[l]{\tabitem Crash \\ \tabitem Slow} & \tabitem Corrupt & \tabitem Corrupt \\
+                               & Corrupt          & \makecell[l]{\tabitem \hyperref[par:crash]{Crash}                                                                                                                                                                         \\ \tabitem \hyperref[par:slow node]{Slow}} & \makecell[l]{\tabitem \hyperref[par:crash]{Crash} \\ \tabitem \hyperref[par:slow process]{Slow}} & \tabitem \hyperref[par:corrupt action]{Corrupt} & \tabitem \hyperref[par:corrupt action]{Corrupt} \\
         \cmidrule{3-6}
-                               & Find             & \tabitem Find                                 & \tabitem Find                 & \tabitem Find                 & \tabitem Find    \\
+                               & Find             & \tabitem Find                                                     & \tabitem Find                                                   & \tabitem Find                            & \tabitem Find                            \\
         \cmidrule{2-6}
 
-        \multirow{5}{*}[-2.5em]
-        {\textbf{User}}        & None             & \tabitem User Account Access                  & \makecell[l]{\tabitem Command                                                    \\  \tabitem Start \\ \tabitem Stop} & \makecell[l]{\tabitem Read \\ \tabitem Start \\  \tabitem Send \\ \tabitem Terminate } & \makecell[l]{\tabitem Create \\ \tabitem Delete \\ \tabitem Read \\ \tabitem Write} \\
+        \multirow{5}{*}[-2em]
+        {\textbf{User}}        & None             & \tabitem \hyperref[par:access node]{User Access}                  & \makecell[l]{ \tabitem \hyperref[par:command (matrix)]{Command}                                                                                       \\                                                                                                         \tabitem \hyperref[par:start process]{Start}                                                                                        \\ \tabitem \hyperref[par:stop process]{Stop}} & \makecell[l]{\tabitem \hyperref[par:decrypt]{Decrypt} \\ \tabitem \hyperref[par:read stream]{Read} \\ \tabitem \hyperref[par:start stream]{Start} \\  \tabitem \hyperref[par:send]{Send} \\ \tabitem \hyperref[par:terminate]{Terminate} } & \makecell[l]{\tabitem \hyperref[par:create file]{Create} \\ \tabitem \hyperref[par:decrypt]{Decrypt} \\ \tabitem \hyperref[par:delete file]{Delete} \\ \tabitem \hyperref[par:read file]{Read} \\ \tabitem \hyperref[par:write file]{Write}} \\
         \cmidrule{3-6}
-                               & Control          &                                               & \tabitem Control [Thing]      &                               &                  \\
+                               & Control          &                                                                   & \tabitem Control [Thing]                                        &                                          &                                          \\
         \cmidrule{3-6}
-                               & Crypt            &                                               &                               & \makecell[l]{\tabitem Decrypt                    \\ \tabitem Encrypt} & \makecell[l]{\tabitem Decrypt \\ \tabitem Encrypt} \\
+                               & Crypt            &                                                                   &                                                                 & \tabitem \hyperref[par:encrypt]{Encrypt} & \tabitem \hyperref[par:encrypt]{Encrypt} \\
         \cmidrule{3-6}
-                               & Edit             &                                               &                               & \tabitem Edit                 & \tabitem Edit    \\
+                               & Generate         &                                                                   &                                                                 & \tabitem Generate                        & \tabitem Generate                        \\
         \cmidrule{3-6}
-                               & Medic            & \tabitem Repair                               & \tabitem Repair               &                               &                  \\
+                               & Medic            & \tabitem \hyperref[par:repair]{Repair}                            & \tabitem \hyperref[par:repair]{Repair}                          &                                          &                                          \\
         \cmidrule{2-6}
-        \textbf{Security}      & None             & \makecell[l]{\tabitem Security Account Access                                                                                    \\ \tabitem View Accounts \\  \tabitem View Alarm Status \\ \tabitem View Logs \\ \tabitem View Subscriptions } & \makecell[l]{\tabitem Command ICE \\ \tabitem Start ICE \\ \tabitem Stop ICE} & & \\
+        \textbf{Security}      & None             & \makecell[l]{\tabitem \hyperref[par:access node]{Security Access}                                                                                                                                                         \\ \tabitem \hyperref[par:view accounts]{View Accounts} \\  \tabitem \hyperref[par:view alert status]{View Alert Status} \\ \tabitem \hyperref[par:view logs]{View Logs} \\ \tabitem \hyperref[par:view subscriptions]{View Subscriptions} } & \makecell[l]{\tabitem Command ICE \\ \tabitem Start ICE \\ \tabitem Stop ICE} & & \\
         \cmidrule{2-6}
-        \textbf{Admin}         & None             & \makecell[l]{\tabitem Admin Account Access                                                                                       \\ \tabitem Change Alarm Status \\  \tabitem Edit Accounts \\ \tabitem Edit Logs \\ \tabitem Edit Subscriptions \\ \tabitem Shutdown  \\ \tabitem Startup} &  & &  \\
+        \textbf{Admin}         & None             & \makecell[l]{\tabitem \hyperref[par:access node]{Admin Access}                                                                                                                                                            \\ \tabitem \hyperref[par:change alert status]{Change Alert Status} \\  \tabitem \hyperref[par:edit accounts]{Edit Accounts} \\ \tabitem \hyperref[par:edit logs]{Edit Logs} \\ \tabitem \hyperref[par:edit subscriptions]{Edit Subscriptions} \\ \tabitem Shutdown} &  & &  \\
         \bottomrule
     \end{tabular}
 \end{table*}
 
-\paragraph{Access}
-\label{par: access}
+\subsection{Basic Actions}
 
-\mbox{}\\
+\emph{Basic Actions} are very simple and normally do not require a \emph{Test}
+or \emph{Program}. If a \emph{Test} is required because the \emph{Character} is
+wounded or has an extreme non-technical background use:
+
+\begin{equation*}
+    \textit{Computers} +3
+\end{equation*}
+
+\myparagraph{Access Node}
+\index{Access}
+\label{par:access node}
 
 \begin{tabular}{rl}
-    \textbf{Program}       & None            \\
-    \textbf{Prerequisite}  & \emph{Node} AID \\
-    \textbf{Test Modifier} & None            \\
-    \textbf{Duration}      & 0.1s            \\
+    \textbf{Prerequisite} & \emph{Node AID} \\
+    \textbf{Duration}     & 0.1s            \\
 \end{tabular}
 
 \hfill
 
-This action is required to access a \emph{Node} with a known AID. After a successful Access Action
-the decker has accessed the \emph{Node}.
+This action is required to access a \emph{Node} with a known \emph{AID}. After a
+successful \emph{Access Action} the decker has \emph{accessed} the \emph{Node}.
 
-\paragraph{Analyze [Node, Process, Stream, File]}
-\label{par: analyze}
+Having \emph{accessed} a \emph{Node} is often a prerequisite for lots of
+\emph{Matrix Actions} targeting \emph{Files} and \emph{Streams}. It is only of
+particular relevance when a decker does not have the relevant \emph{Access Rights}
+to \emph{access} the \emph{Node} and needs to \emph{Exploit} their way in.
 
-\mbox{}\\
+\myparagraph{Change Alert Status}
+\label{par:change alert status}
+
 
 \begin{tabular}{rl}
-    \textbf{Program}       & Analyze                             \\
+    \textbf{Prerequisite} & \emph{Accessed} \emph{Node} \\
+    \textbf{Duration}     & 0.5s                        \\
+\end{tabular}
+
+\hfill
+
+This action allows the decker to change the \emph{Nodes} \emph{Alert Status}.
+
+\myparagraph{Command}
+\index{Command (Matrix)}
+\label{par:command (matrix)}
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & \emph{Process AID}, \emph{Accessed origin Node} \\
+    \textbf{Duration}     & 2s                                              \\
+\end{tabular}
+
+\hfill
+
+This action allows a decker to give commands to a \emph{Process}. This can either
+be an \emph{Agent}, or any other \emph{Program} on a \emph{Node} or \emph{Device}
+like a drone or a security camera.
+
+The decker needs the \emph{AID} of the \emph{Process} and needs to \emph{access}
+the origin or target \emph{Node} of the \emph{Process}.
+
+\myparagraph{Create File}
+\index{Create File}
+\label{par:create file}
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & \emph{Accessed Node} \\
+    \textbf{Duration}     & 1s                   \\
+\end{tabular}
+
+\hfill
+
+This action creates a \emph{File} in a \emph{Node}. The creator chooses content and
+\emph{Access Rights} and gets the \emph{Files} \emph{AID}.
+
+\myparagraph{Decrypt}
+\label{par:decrypt}
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & \emph{Red File}, \emph{CryptKey} \\
+    \textbf{Duration}     & 0.1s                             \\
+\end{tabular}
+
+\hfill
+
+\emph{Decrypt} and \emph{encrypted} \emph{File} if the decker has the \emph{CryptKey}.
+
+\myparagraph{Delete File}
+\label{par:delete file}
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & \emph{File AID}, \emph{Accessed Node} \\
+    \textbf{Duration}     & 0.1s                                  \\
+\end{tabular}
+
+\hfill
+
+\emph{Delete} a \emph{File} in a \emph{Node}. After the \emph{File} is
+\emph{deleted} it can not be recovered.
+
+\myparagraph{Edit Accounts}
+\label{par:edit accounts}
+
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & \emph{Accessed} \emph{Node} \\
+    \textbf{Duration}     & 0.5s                        \\
+\end{tabular}
+
+\hfill
+
+This action allows the decker to edit \emph{Accounts} of a \emph{Nodes}. This
+includes removing, adding and changing \emph{Access Levels}. In the case of adding
+a new \emph{Accounts} the respective SIN is required.
+
+\myparagraph{Edit Logs}
+\label{par:edit logs}
+
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & \emph{Accessed} \emph{Node} \\
+    \textbf{Duration}     & 0.5s                        \\
+\end{tabular}
+
+\hfill
+
+This action allows the decker to edit the \emph{Logs} of a \emph{Node}. This
+includes adding and removing entries.
+
+\myparagraph{Edit Subscriptions}
+\label{par:edit subscriptions}
+
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & \emph{Accessed} \emph{Node}    \\
+                          & \emph{Admin Access other Node} \\
+    \textbf{Duration}     & 0.5s                           \\
+\end{tabular}
+
+\hfill
+
+This action allows the decker to edit the \emph{Subscription List} of a \emph{Nodes}.
+This includes removing and adding \emph{Nodes}. In the case of adding
+a decker needs Admin Access on the other \emph{Node}.
+
+\myparagraph{Read File}
+\label{par:read file}
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & \emph{File AID}, \emph{Accessed Node} \\
+    \textbf{Duration}     & 0.1s                                  \\
+\end{tabular}
+
+\hfill
+
+This action allows a decker to read \emph{Files} in a \emph{Node}. \emph{Reading}
+a \emph{File} enables a decker to \emph{create} a local \emph{File} copy in the
+\emph{Personas} origin \emph{Node}.
+
+\myparagraph{Read Stream}
+\label{par:read stream}
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & \emph{Stream AID}                  \\
+                          & \emph{Accessed origin/target Node} \\
+    \textbf{Duration}     & 0.1s                               \\
+\end{tabular}
+
+\hfill
+
+This action allows a decker to read \emph{Streams} in a \emph{Node}.
+\emph{Reading} a \emph{Stream} enables a decker to \emph{create} a local \emph{File}
+containing the content of the \emph{Stream} in the \emph{Personas} origin
+\emph{Node}.
+
+\myparagraph{Start Process}
+\label{par:start process}
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & \emph{Accessed Node} \\
+    \textbf{Duration}     & 1s                   \\
+\end{tabular}
+
+\hfill
+
+This action creates a \emph{Process} in a \emph{Node}. The creator chooses its
+\emph{Access Rights} and gets the \emph{Process} \emph{AID}.
+
+\myparagraph{Send to Stream}
+\label{par:send}
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & \emph{Stream AID}           \\
+                          & \emph{Accessed origin Node} \\
+    \textbf{Duration}     & 1s                          \\
+\end{tabular}
+
+\hfill
+
+This action creates a \emph{Stream} between two \emph{Nodes}. The creator chooses
+content and \emph{Access Rights}.
+
+\myparagraph{Start Stream}
+\label{par:start stream}
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & \emph{Accessed origin Node}      \\
+                          & \emph{Accessed destination Node} \\
+    \textbf{Duration}     & 1s                               \\
+\end{tabular}
+
+\hfill
+
+This action creates a \emph{Stream} between two \emph{Nodes}. The creator chooses
+content and \emph{Access Rights} and gets the \emph{Streams} \emph{AID}.
+
+\myparagraph{Stop Process}
+\label{par:stop process}
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & \emph{Process AID}          \\
+                          & \emph{Accessed origin Node} \\
+    \textbf{Duration}     & 1s                          \\
+\end{tabular}
+
+\hfill
+
+This action \emph{stops} a \emph{Process}. A related \emph{Agent} or \emph{Persona}
+is instantly shut down.
+
+
+\myparagraph{Terminate Stream}
+\label{par:terminate}
+
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & \emph{Stream AID}           \\
+                          & \emph{Accessed origin Node} \\
+    \textbf{Duration}     & 0.5s                        \\
+\end{tabular}
+
+\hfill
+
+This action \emph{terminates} a \emph{Stream}. A related \emph{Process}
+is instantly stopped.
+
+\myparagraph{View Accounts}
+\label{par:view accounts}
+
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & \emph{Accessed} \emph{Node} \\
+    \textbf{Duration}     & 0.5s                        \\
+\end{tabular}
+
+\hfill
+
+This action allows the decker to view all \emph{User}, \emph{Security} and
+\emph{Admin} \emph{Accounts} for the \emph{Node}.
+
+\myparagraph{View Alert Status}
+\label{par:view alert status}
+
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & \emph{Accessed} \emph{Node} \\
+    \textbf{Duration}     & 0.5s                        \\
+\end{tabular}
+
+\hfill
+
+This action allows the decker to view the current \emph{Alert Status} of the
+\emph{Node}.
+
+\myparagraph{View Logs}
+\label{par:view logs}
+
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & \emph{Accessed} \emph{Node} \\
+    \textbf{Duration}     & 0.5s                        \\
+\end{tabular}
+
+\hfill
+
+This action allows the decker to view the current \emph{Logs} of the
+\emph{Node}.
+
+\myparagraph{View Subscriptions}
+\label{par:view subscriptions}
+
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & \emph{Accessed} \emph{Node} \\
+    \textbf{Duration}     & 0.5s                        \\
+\end{tabular}
+
+\hfill
+
+This action allows the decker to view the \emph{AIDs} of the \emph{Nodes} the are
+\emph{subscribed} to the \emph{Node}.
+
+\myparagraph{Write to File}
+\label{par:write file}
+
+
+\begin{tabular}{rl}
+    \textbf{Prerequisite} & Found \emph{File} \\
+    \textbf{Duration}     & 0.5s              \\
+\end{tabular}
+
+\hfill
+
+This action allows a decker to \emph{write} any content to a \emph{File}.
+
+\subsection{Advanced Actions}
+
+\emph{Advanced Actions} require \emph{Tests} to perform and require a \emph{Program}
+to carry out. The standard \emph{Test} is:
+
+\begin{equation*}
+    \textit{Computers}(\textit{Program}) + \textit{Modifiers}
+\end{equation*}
+
+\myparagraph{Analyze [Node, Process, Stream, File]}
+\label{par:analyze}
+
+
+\begin{tabular}{rl}
+    \textbf{Program}       & Computer(Analyze)                   \\
     \textbf{Prerequisite}  & Found [Node, Process, Stream, File] \\
-    \textbf{Test Modifier} & \emph{Sleaze}                       \\
+    \textbf{Test Modifier} & Target \emph{Sleaze}                \\
     \textbf{Duration}      & 2s                                  \\
 \end{tabular}
 
@@ -452,10 +818,200 @@ can only be analyzed if the decker has \emph{accessed} either the target or the 
     \end{tabular}
 \end{table}
 
-\paragraph{Break}
-\label{par: break}
 
-\mbox{}\\
+\myparagraph{Control}
+\label{par:control}
+
+\begin{tabular}{rl}
+    \textbf{Program}       & Skill(Control)              \\
+    \textbf{Prerequisite}  & \emph{Accessed} \emph{Node} \\
+                           & \emph{Process} \emph{AID}   \\
+    \textbf{Test Modifier} & var.                        \\
+    \textbf{Duration}      & 1s                          \\
+\end{tabular}
+
+\hfill
+
+Using the \emph{Control Action} the decker can use any kind of item that can be
+\emph{controlled} remotely from a \emph{Process} in a \emph{Node}. The decker has
+to use the relevant \emph{Skill} limited by the \emph{Control Program}.
+
+\begin{equation*}
+    \textit{Skill(Control)}
+\end{equation*}
+
+Examples are using remotely controlled guns using \emph{Gunnery} or driving a
+remotely controlled car using \emph{Wheeled}.
+
+\myparagraph{Encrypt}
+\label{par:encrypt}
+
+\begin{tabular}{rl}
+    \textbf{Program}       & Crypt                                \\
+    \textbf{Prerequisite}  & \emph{Accessed} \emph{Node}          \\
+                           & \emph{File AID} or \emph{Stream AID} \\
+    \textbf{Test Modifier} & None                                 \\
+    \textbf{Duration}      & 1s                                   \\
+\end{tabular}
+
+\hfill
+
+The \emph{Encrypt Action} encrypts a \emph{File} or \emph{Stream} so that even
+deckers with the required \emph{Access Rights} can not read the content. The
+\emph{Action} does not require a \emph{Test} but automatically encrypts the
+\emph{File} or \emph{Stream} with the \emph{Crypt Programs} rating.
+To read the content one needs either the key or try to \emph{Break} the encryption.
+
+
+\myparagraph{Find Process}
+\label{par:find process}
+
+
+\begin{tabular}{rl}
+    \textbf{Program}       & Computer(Find)                                  \\
+    \textbf{Prerequisite}  & \emph{Access} to origin/destination \emph{Node} \\
+    \textbf{Test Modifier} & \emph{Sleaze}                                   \\
+    \textbf{Duration}      & 10s                                             \\
+\end{tabular}
+
+\hfill
+
+This action allows a decker to find \emph{Processes} in a \emph{Node}, which must be either its
+origin or the destination.
+
+\myparagraph{Find Stream}
+\label{par:find stream}
+
+
+\begin{tabular}{rl}
+    \textbf{Program}       & Computer(Find)                                  \\
+    \textbf{Prerequisite}  & \emph{Access} to origin/destination \emph{Node} \\
+    \textbf{Test Modifier} & \emph{Sleaze}                                   \\
+    \textbf{Duration}      & 10s                                             \\
+\end{tabular}
+
+\hfill
+
+This action allows a decker to find \emph{Streams} in a \emph{Node}, which must be either its
+origin or the destination.
+
+\myparagraph{Find File}
+\label{par:find file}
+
+\begin{tabular}{rl}
+    \textbf{Program}       & Computer(Find)                                  \\
+    \textbf{Prerequisite}  & \emph{Access} to origin/destination \emph{Node} \\
+    \textbf{Test Modifier} & \emph{Sleaze}                                   \\
+    \textbf{Duration}      & 10s                                             \\
+\end{tabular}
+
+\hfill
+
+This action allows a decker to find \emph{Files} in a \emph{Node}.
+
+\subsection{Matrix Combat}
+\label{subsec:matrix combat}
+
+
+\myparagraph{Corrupt}
+\label{par:corrupt action}
+
+\begin{tabular}{rl}
+    \textbf{Program}       & Corrupt                              \\
+    \textbf{Prerequisite}  & \emph{Accessed} \emph{Node}          \\
+                           & \emph{File AID} or \emph{Stream AID} \\
+                           & or Found [\emph{File}/\emph{Stream}] \\
+    \textbf{Test Modifier} & Originating \emph{Node} System       \\
+    \textbf{Duration}      & 1s                                   \\
+\end{tabular}
+
+\hfill
+
+If a decker does not have the \emph{Access Right} to \emph{delete} a \emph{File}
+or \emph{Terminate} a \emph{Stream} the decker can \emph{corrupt} it so it becomes
+unusable.
+
+\begin{equation*}
+    \textit{TQ} = \textit{Cyber Combat(Corrupt) - System}
+\end{equation*}
+
+For each point of \emph{Test Quality} deal \emph{Processor} \emph{Matrix Damage}
+to the \emph{File} or \emph{Stream}.
+
+
+\myparagraph{Crash}
+\label{par:crash}
+
+\begin{tabular}{rl}
+    \textbf{Program}       & Cyber Combat(Crash)                \\
+    \textbf{Prerequisite}  & Found [\emph{Node}/\emph{Process}] \\
+    \textbf{Test Modifier} & System                             \\
+    \textbf{Duration}      & 1s                                 \\
+\end{tabular}
+
+\hfill
+
+For each point of \emph{Test Quality} deal \emph{Processor} \emph{Matrix Damage}
+to the \emph{Node} or \emph{Process}.
+
+\myparagraph{Repair}
+\label{par:repair}
+
+
+\begin{tabular}{rl}
+    \textbf{Program}       & Computer(Medic) \\
+    \textbf{Prerequisite}  & AID             \\
+    \textbf{Test Modifier} & None            \\
+    \textbf{Duration}      & 10s             \\
+\end{tabular}
+
+\hfill
+
+The \emph{Repair Action} allows a decker to \emph{repair} \emph{Matrix Damage}
+on \emph{Nodes}, \emph{Processes}, \emph{Files} and \emph{Streams}.
+For each point of \emph{Test Quality} repairs one point of \emph{Matrix Damage}
+to the target.
+
+
+\myparagraph{Slow Node}
+\label{par:slow node}
+
+
+\begin{tabular}{rl}
+    \textbf{Program}       & Hacking(Slow)                \\
+    \textbf{Prerequisite}  & \emph{Access} to \emph{Node} \\
+    \textbf{Test Modifier} & System                       \\
+    \textbf{Duration}      & 1s                           \\
+\end{tabular}
+
+\hfill
+
+The \emph{Slow Action} allows a decker to reduce the \emph{Processor} a target
+\emph{Node}. Reduce the \emph{Processor} by the \emph{Test Quality}. This effect
+lasts for 10s, or till the decker takes another \emph{Action}, whichever happens
+later.
+
+\myparagraph{Slow Process}
+\label{par:slow process}
+
+
+\begin{tabular}{rl}
+    \textbf{Program}       & Hacking(Slow)        \\
+    \textbf{Prerequisite}  & Found \emph{Process} \\
+    \textbf{Test Modifier} & System               \\
+    \textbf{Duration}      & 1s                   \\
+\end{tabular}
+
+\hfill
+
+The \emph{Slow Action} allows a decker to force \emph{Actions} of a target
+\emph{Node} or \emph{Process} to take
+longer.
+
+\subsection{Cracking}
+
+\myparagraph{Break}
+\label{par:break}
 
 \begin{tabular}{rl}
     \textbf{Program}       & Break                             \\
@@ -466,325 +1022,22 @@ can only be analyzed if the decker has \emph{accessed} either the target or the 
 
 \hfill
 
-
-\paragraph{Command}
-\label{par: command}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & None               \\
-    \textbf{Prerequisite}  & \emph{Process} AID \\
-    \textbf{Test Modifier} & var.               \\
-    \textbf{Duration}      & 2s                 \\
-\end{tabular}
-
-\hfill
-
-This action allows a decker to give commands to a \emph{Process}. This can either be an agent,
-or any other program on a \emph{Node} or \emph{Device} like a drone or a security camera.
-
-The decker needs only the AID of the \emph{Process} and does not need to access the hosting
-\emph{Node}.
-
-\paragraph{Control}
-\label{par: control}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & Control \\
-    \textbf{Prerequisite}  & None    \\
-    \textbf{Test Modifier} & None    \\
-    \textbf{Duration}      & 1s      \\
-\end{tabular}
-
-\hfill
-
-\paragraph{Corrupt}
-\label{par: corrupt action}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & Corrupt                           \\
-    \textbf{Prerequisite}  & Found [\emph{Stream}/\emph{File}] \\
-    \textbf{Test Modifier} & Originating \emph{Node} System    \\
-    \textbf{Duration}      & 1s                                \\
-\end{tabular}
-
-\hfill
-
-\paragraph{Crash}
-\label{par: crash}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & Corrupt                            \\
-    \textbf{Prerequisite}  & Found [\emph{Node}/\emph{Process}] \\
-    \textbf{Test Modifier} & System                             \\
-    \textbf{Duration}      & 1s                                 \\
-\end{tabular}
-
-\hfill
-
-\paragraph{Create File}
-\label{par: create file}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & None \\
-    \textbf{Prerequisite}  & None \\
-    \textbf{Test Modifier} & None \\
-    \textbf{Duration}      & 0.5s \\
-\end{tabular}
-
-\hfill
-
-\paragraph{Decrypt}
-\label{par: decrypt}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & Crypt \\
-    \textbf{Prerequisite}  & None  \\
-    \textbf{Test Modifier} & None  \\
-    \textbf{Duration}      & 1s    \\
-\end{tabular}
-
-\hfill
-
-\paragraph{Delete File}
-\label{par: delete file}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & None \\
-    \textbf{Prerequisite}  & None \\
-    \textbf{Test Modifier} & None \\
-    \textbf{Duration}      & 0.5s \\
-\end{tabular}
-
-\hfill
-
-\paragraph{Encrypt}
-\label{par: encrypt}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & Crypt \\
-    \textbf{Prerequisite}  & None  \\
-    \textbf{Test Modifier} & None  \\
-    \textbf{Duration}      & 1s    \\
-\end{tabular}
-
-\hfill
-
-\paragraph{Find Process}
-\label{par: find process}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & Find                                     \\
-    \textbf{Prerequisite}  & Access to origin/destination \emph{Node} \\
-    \textbf{Test Modifier} & \emph{Sleaze}                            \\
-    \textbf{Duration}      & 10s                                      \\
-\end{tabular}
-
-\hfill
-
-This action allows a decker to find \emph{Processes} in a \emph{Node}, which must be either its
-origin or the destination.
-
-\paragraph{Find Stream}
-\label{par: find stram}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & Find                                     \\
-    \textbf{Prerequisite}  & Access to origin/destination \emph{Node} \\
-    \textbf{Test Modifier} & var.                                     \\
-    \textbf{Duration}      & 10s                                      \\
-\end{tabular}
-
-\hfill
-
-This action allows a decker to find \emph{Streams} in a \emph{Node}, which must be either its
-origin or the destination.
-
-\paragraph{Find File}
-\label{par: find file}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & Find                          \\
-    \textbf{Prerequisite}  & Access to hosting \emph{Node} \\
-    \textbf{Test Modifier} & var.                          \\
-    \textbf{Duration}      & 10s                           \\
-\end{tabular}
-
-\hfill
-
-This action allows a decker to find \emph{Files} in a \emph{Node}.
-
-\paragraph{Read}
-\label{par: read}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & None                            \\
-    \textbf{Prerequisite}  & Found \emph{File}/\emph{Stream} \\
-    \textbf{Test Modifier} & None                            \\
-    \textbf{Duration}      & 0.1s                            \\
-\end{tabular}
-
-\hfill
-
-This action allows a decker to read \emph{Files} in a \emph{Node}. The decker must have
-\emph{found} the the \emph{File} first.
-
-\paragraph{Repair}
-\label{par: repair}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & Medic                           \\
-    \textbf{Prerequisite}  & Found \emph{File}/\emph{Stream} \\
-    \textbf{Test Modifier} & None                            \\
-    \textbf{Duration}      & 0.1s                            \\
-\end{tabular}
-
-\hfill
-
-
-\paragraph{Send to Stream}
-\label{par: send to stream}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & None                \\
-    \textbf{Prerequisite}  & Found \emph{Stream} \\
-    \textbf{Test Modifier} & None                \\
-    \textbf{Duration}      & 0.5s                \\
-\end{tabular}
-
-\hfill
-
-\paragraph{Slow}
-\label{par: slow}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & Corrupt                            \\
-    \textbf{Prerequisite}  & Found [\emph{Node}/\emph{Process}] \\
-    \textbf{Test Modifier} & System                             \\
-    \textbf{Duration}      & 1s                                 \\
-\end{tabular}
-
-\hfill
-
-\paragraph{Start Process}
-\label{par: start process}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & None \\
-    \textbf{Prerequisite}  & None \\
-    \textbf{Test Modifier} & None \\
-    \textbf{Duration}      & 0.5s \\
-\end{tabular}
-
-\hfill
-
-\paragraph{Start Stream}
-\label{par: start stream}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & None \\
-    \textbf{Prerequisite}  & None \\
-    \textbf{Test Modifier} & None \\
-    \textbf{Duration}      & 0.5s \\
-\end{tabular}
-
-\hfill
-
-\paragraph{Stop Process}
-\label{par: stop process}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & None \\
-    \textbf{Prerequisite}  & None \\
-    \textbf{Test Modifier} & None \\
-    \textbf{Duration}      & 0.5s \\
-\end{tabular}
-
-\hfill
-
-
-\paragraph{Terminate Stream}
-\label{par: terminate stream}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & None                \\
-    \textbf{Prerequisite}  & Found \emph{Stream} \\
-    \textbf{Test Modifier} & None                \\
-    \textbf{Duration}      & 0.5s                \\
-\end{tabular}
-
-\hfill
-
-\paragraph{Write to File}
-\label{par: write file}
-
-\mbox{}\\
-
-\begin{tabular}{rl}
-    \textbf{Program}       & None              \\
-    \textbf{Prerequisite}  & Found \emph{File} \\
-    \textbf{Test Modifier} & None              \\
-    \textbf{Duration}      & 0.5s              \\
-\end{tabular}
-
-\hfill
-
-\section{Cracking}
-\label{sec: cracking}
-
-
-\subsection{Exploit}
+\paragraph{Exploit}
 \index{Exploit}
 
-Every time a decker wants to perform an action where their user level is not high
-enough, like viewing the security log without being at least \emph{Security} level,
-an Exploit test is required. If the action in question requires a test itself,
-when for example editing a stream, the Exploit test does not replace the actual
-test but is an additional requirement.
+Every time a decker wants to perform an action where their \emph{Access Level}
+is not high enough, like \emph{Viewing} the security \emph{Log} without being
+at least \emph{Security} level, an \emph{Exploit} \emph{Test} is required.
+If the \emph{Action} in question requires a \emph{Test} itself,
+when for example \emph{Writing to a Stream}, the \emph{Exploit} test does not
+replace the actual \emph{Test} but is an additional requirement.
 
 An Exploit test is an opposed test between the deckers \emph{Cracking(Exploit)} and
 the \emph{Nodes} \emph{Firewall}.
 
-\begin{verbatim}
-    TQ = 10dF + Cracking(Exploit) - Firewall
-\end{verbatim}
+\begin{equation*}
+    \textit{Test Quality} = \textit{10fR} + \textit{Cracking(Exploit)} - \textit{Firewall}
+\end{equation*}
 
 In addition each Exploit test can increase the deckers \emph{Security Tally}.
 
@@ -807,6 +1060,29 @@ In addition each Exploit test can increase the deckers \emph{Security Tally}.
     \end{tabular}
 \end{table}
 
+\subsection{Related Actions}
+
+\myparagraph{Physical Reboot}
+\index{Physical Reboot}
+
+A \emph{Physical Reboot} can only be done while having physical access to the
+\emph{Node}. It does not require a test and takes time depending on the
+\emph{Processor} of the \emph{Node}:
+
+\begin{equation*}
+    \textit{Reboot Time} = \textit{Processor}^2 + \textit{seconds}
+\end{equation*}
+
+During a \emph{Physical Reboot} the Admin Account can be changed to whatever SIN
+or \emph{AID} the person that does the \emph{Reboot} desires.
+
+\myparagraph{Jack Out}
+\index{Jack Out}
+
+\myparagraph{Data Search}
+\index{Data Search}
+
+
 \subsection{Security Tally}
 \index{Security Tally}
 
@@ -817,23 +1093,23 @@ In addition each Exploit test can increase the deckers \emph{Security Tally}.
     \centering
     \begin{tabular}{cl}
         \toprule
-        \textbf{Tally} & \textbf{Measure} \\
+        \textbf{Tally} & \textbf{Measure}   \\
         \midrule
-        \textbf{5}     & Analyze ICE      \\
-        \textbf{10}    & Trace ICE        \\
-        \textbf{15}    & Silent Alert     \\
-        \textbf{20}    & Combat ICE       \\
-        \textbf{25}    & Active Alert     \\
-        \textbf{50}    & Shutdown         \\
+        \textbf{5}     & Analyze ICE        \\
+        \textbf{10}    & Trace ICE          \\
+        \textbf{15}    & Silent Alert       \\
+        \textbf{20}    & Combat ICE         \\
+        \textbf{25}    & Active Alert       \\
+        \textbf{50}    & Emergency Shutdown \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 
 
-\begin{verbatim}
-    Tally = abs(d10) + System - Sleaze
-\end{verbatim}
+\begin{equation*}
+    \textit{Tally} = \textit{5fN} + \textit{System} - \textit{Sleaze}
+\end{equation*}
 
 \paragraph{Analyze ICE}
 
@@ -867,10 +1143,9 @@ The information is broadcasted to all Processes in the Node.
 
 \section{Electronic Warfare}
 
-\paragraph{Find Wireless}
-\label{par: find wireless}
+\myparagraph{Find Wireless}
+\label{par:find wireless}
 
-\mbox{}\\
 
 \begin{tabular}{rl}
     \textbf{Program}       & Scan                          \\
@@ -881,10 +1156,9 @@ The information is broadcasted to all Processes in the Node.
 
 \hfill
 
-\paragraph{Jam Wireless}
-\label{par: jam wireless}
+\myparagraph{Jam Wireless}
+\label{par:jam wireless}
 
-\mbox{}\\
 
 \begin{tabular}{rl}
     \textbf{Program}       & Scan \\
