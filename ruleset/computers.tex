@@ -4,19 +4,34 @@
 This chapter explains both the matrix, including AR and everything computer related
 like electronic warfare.
 
+Matrix rules are inclusive rules in a sense that each and every action a Player
+can take is described. This is in contrast to real world actions where the rule
+system gives a broad framework for players to extrapolate. This is the case
+because every Player has real world experience and expectations which just need to
+calibrated by rules (like introducing cyberware).
+
+In the Matrix however, there is no common experience and thus no a priori contract
+between Players and Game Master what is possible and how probable it is.
+Thus Matrix rules have to be very strict and not assume anything.
+
+As a rule of thumb, a character can not do anything that is not a given
+\emph{Matrix Action}. However, the nature of the Matrix allows to describe the
+same \emph{Action} very differently.
+
 
 \section{What is the Matrix}
 
-The Matrix is a virtual representation of the cyberspace for human users. It is they way they
-perceive interactions between themselves and both other matrix users and \emph{Matrix Entities}.
+The Matrix is a virtual representation of the cyberspace for human users. It is
+they way they perceive interactions between themselves and both other matrix users
+and \emph{Matrix Entities}.
 
 \subsection{Accessing the Matrix}
 \label{subsec:access matrix}
 
-There are various ways to access the matrix.
+There are various ways to access the Matrix.
 
 \paragraph{Physical Access}
-This method of matrix access uses outdated methods like keyboard and mouse.
+This method of \emph{Matrix Access} uses outdated methods like keyboard and mouse.
 It is generally outdated and very slow. It is only used if people are afraid of any kind of matrix
 damage, or are very traditional.
 
@@ -229,16 +244,40 @@ specific to the \emph{Node} and linked to the deckers SIN or, in the case of
 
 \paragraph{Anonymous}
 \index{Anonymous}
+
+\emph{Anonymous Access Level} is the default \emph{Level} that is automatically
+granted to everyone.
+
 \paragraph{User}
 \index{User}
+\emph{User} is a catch all \emph{Level} for a large number of \emph{Accounts} of
+different Matrix users. A \emph{Node} can have multiple \emph{User Levels} with
+non overlapping \emph{Access Rights} for \emph{Files}, \emph{Streams} and
+\emph{Processes}. If a decker \emph{Exploited} a \emph{User Account} the
+Game Master decides which \emph{Access Rights} come with it.
+
 \paragraph{Security}
 \index{Security}
+
+The \emph{Security Level} is, in addition to any or no \emph{User Access Rights}
+used to perform various security relevant \emph{Actions}, especially controlling
+\emph{ICE} and maintaining the \emph{Security Tally}.
+
 \paragraph{Admin}
 \index{Admin}
+
+The \emph{Admin Access Level} can do everything in a \emph{Node}.
 
 \subsection{Matrix Properties}
 \paragraph{Access Rights}
 \index{Access Rights}
+Each \emph{Matrix Entity} has \emph{Access Rights} that govern which
+\emph{Account Levels} are allowed to perform which \emph{Actions}. These
+\emph{Rights} govern for example who can \emph{Access} a \emph{Node}, \emph{Read}
+a \emph{File}, \emph{Send} to a \emph{Stream} or \emph{Command} a \emph{Process}.
+
+Each \emph{Node} their own \emph{Access Rights} for the \emph{Matrix Entities} they
+contain. They can be changed by the \emph{Edit Access Rights Action}.
 
 \paragraph{Access ID}
 \index{Access ID}
@@ -257,9 +296,29 @@ and anything else that was done in the \emph{Node}. \emph{Actions} from a
 \emph{Process} that has a \emph{Sleaze} rating are only \emph{logged} when
 they have been successfully \emph{analyzed} by \emph{Analyze ICE}.
 
+\paragraph{Integrity}
+\index{Integrity}
+
+Each \emph{Matrix Entity} has an Integrity value that is a measure for how much
+\emph{Matrix Damage} it can take before it is suffering negative consequences.
+
+The Integrity value is depending on the origin \emph{Node} of the \emph{Entity}:
+
+\begin{equation}
+    \textit{Integrity} = 10 \cdot \textit{System}
+\end{equation}
+
+\paragraph{Matrix Damage}
+\index{Matrix Damage}
+\emph{Matrix Damage} done to an \emph{Entity} is added up until it reaches
+\emph{Integrity}.  Once the \emph{Damage} reaches this threshold
+\emph{Nodes} are \emph{shut down},  \emph{Processes} are \emph{crashed},
+\emph{Files} are \emph{deleted} and \emph{Streams} are \emph{terminated}.
+
 \subsection{Matrix Attributes}
 
-Each \emph{matrix device} has a number of attributes that define its properties in the matrix.
+Each \emph{Matrix Device} has a number of attributes that define its properties
+in the Matrix.
 
 \paragraph{Processor}
 \index{Processor}
@@ -306,6 +365,7 @@ suite of a \emph{Node}. The higher the ranking the higher the rating of
 
 A high Systems rating also helps autonomous software like \emph{ICE} to
 perform more efficiently.
+
 
 \paragraph{Firewall}
 \index{Firewall}
@@ -412,6 +472,106 @@ Without it the decker would instantly be recognized after performing any kind of
 A \emph{Sleaze} module allows also to broadcast and change (fake) SINs the decker
 possesses. The decker can not mimic arbitrary SINs.
 
+\section{Matrix Concepts}
+
+\subsection{Security Tally}
+\index{Security Tally}
+
+The \emph{Security Tally} is tally that is specific for each \emph{Process}
+\emph{accessing} a \emph{Node}. It is a measure on how suspicious a \emph{Node} is
+about illegal \emph{Actions} from a \emph{Process}. The \emph{Tally} increases by
+performing illegal \emph{Actions} while not having a high enough
+\emph{Sleaze Attribute} to not be noticed.
+
+Actions that increase the \emph{Security Tally} include:
+
+\begin{itemize}[parsep=0em]
+    \item Exploit
+    \item Crash
+    \item Corrupt
+\end{itemize}
+
+The \emph{Tally} for a \emph{Process} can be changed by using the
+\emph{Edit Logs Action}. Various effects of the Tally like \emph{ICE} and
+\emph{Alerts} can  also be reverted by various \emph{Security Actions}.
+
+Depending on the value of the \emph{Tally}, the \emph{Node} is launching
+various countermeasures.
+
+\begin{table}[htb]
+    \rowcolors{1}{}{lightgray}
+    \caption[Security Tally Measures]{Security Tally Measures}
+    \label{tab:tally measures}
+    \centering
+    \begin{tabular}{cl}
+        \toprule
+        \textbf{Tally} & \textbf{Measure}   \\
+        \midrule
+        \textbf{5}     & Analyze ICE        \\
+        \textbf{10}    & Trace ICE          \\
+        \textbf{15}    & Silent Alert       \\
+        \textbf{20}    & Combat ICE         \\
+        \textbf{25}    & Active Alert       \\
+        \textbf{50}    & Emergency Shutdown \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\paragraph{Analyze ICE}
+\index{Analyze ICE}
+
+Analyze ICE is looking into a deckers activities to find any signs of illegal
+actions. If it finds anything it will be added to the deckers security tally.
+
+While Analyze ICE is not \emph{slowed}, it is adding 2 points to the \emph{Nodes}
+\emph{System} for any interaction, active or passive, with the triggering
+\emph{Process}. This includes calculation of \emph{Security Tally} increase as
+well as \emph{Analyze Action} or \emph{Crash Actions}.
+
+If it is \emph{crashed} it takes 10 seconds to restart.
+
+\paragraph{Trace ICE}
+\index{Trace ICE}
+
+Trace ICE will try to find the deckers location by analyzing its \emph{Stream}.
+It will immediately start to perform an \emph{Analyze Action}  against the
+the triggering \emph{Process}. Any information gained, especially location,
+is written in the \emph{Nodes} \emph{Logs}.
+The Nodes \emph{System} is used as the \emph{Ability Score} for the
+\emph{Analyze Test}.
+
+If it is \emph{crashed} it takes 10 seconds to restart and will need to
+restart the \emph{Analyze Action}.
+
+\paragraph{Passive Alert}
+\index{Passive Alert}
+\index{Silent Alert}
+In \emph{Silent} or \emph{Passive Alert} \emph{Status} a list of predefined
+personnel is informed of a possible intrusion.
+The \emph{Node} diverts resources to security purposes,
+increasing \emph{Firewall} by 2 and decreasing \emph{Processor} by 2.
+Any standard functionality of the \emph{Node} could be impaired by this
+resource transfer (GM discretion).
+The information is not broadcasted to \emph{Processes} in the \emph{Node}.
+
+\paragraph{Combat ICE} Combat ICE will once triggered continuously attack the
+triggering \emph{Process} in the form of \emph{Crash Actions}. The Nodes
+\emph{System} is used as the \emph{Ability Score} for the \emph{Crash Test}.
+
+If it is \emph{crashed} it takes 10 seconds to restart.
+
+\paragraph{Active Alert}
+
+In active Alert Status a list of predefined personnel is informed of an intrusion.
+The \emph{Node} diverts resources to security purposes, increasing \emph{Firewall}
+by 3 and decreasing \emph{Processor} by 3. This is not cumulative with the changes made
+by the \emph{Passive Alert Status}. Any standard functionality of the \emph{Node} can
+be impaired by this resource transfer (GM discretion).
+The information is broadcasted to all \emph{Processes} in the \emph{Node}.
+
+\paragraph{Emergency Shutdown}
+
 \section{Matrix Actions}
 
 \begin{table*}[t]
@@ -448,7 +608,7 @@ possesses. The decker can not mimic arbitrary SINs.
         \cmidrule{2-6}
         \textbf{Security}      & None             & \makecell[l]{\tabitem \hyperref[par:access node]{Security Access}                                                                                                                                                         \\ \tabitem \hyperref[par:view accounts]{View Accounts} \\  \tabitem \hyperref[par:view alert status]{View Alert Status} \\ \tabitem \hyperref[par:view logs]{View Logs} \\ \tabitem \hyperref[par:view subscriptions]{View Subscriptions} } & \makecell[l]{\tabitem Command ICE \\ \tabitem Start ICE \\ \tabitem Stop ICE} & & \\
         \cmidrule{2-6}
-        \textbf{Admin}         & None             & \makecell[l]{\tabitem \hyperref[par:access node]{Admin Access}                                                                                                                                                            \\ \tabitem \hyperref[par:change alert status]{Change Alert Status} \\  \tabitem \hyperref[par:edit accounts]{Edit Accounts} \\ \tabitem \hyperref[par:edit logs]{Edit Logs} \\ \tabitem \hyperref[par:edit subscriptions]{Edit Subscriptions} \\ \tabitem Shutdown} &  & &  \\
+        \textbf{Admin}         & None             & \makecell[l]{\tabitem \hyperref[par:access node]{Admin Access}                                                                                                                                                            \\ \tabitem \hyperref[par:change alert status]{Change Alert Status} \\  \tabitem \hyperref[par:edit access rights]{Edit Access Rights} \\ \tabitem \hyperref[par:edit logs]{Edit Logs} \\ \tabitem \hyperref[par:edit subscriptions]{Edit Subscriptions} \\ \tabitem Shutdown} &  & &  \\
         \bottomrule
     \end{tabular}
 \end{table*}
@@ -552,8 +712,8 @@ This action creates a \emph{File} in a \emph{Node}. The creator chooses content 
 \emph{Delete} a \emph{File} in a \emph{Node}. After the \emph{File} is
 \emph{deleted} it can not be recovered.
 
-\myparagraph{Edit Accounts}
-\label{par:edit accounts}
+\myparagraph{Edit Access Rights}
+\label{par:edit access rights}
 
 
 \begin{tabular}{rl}
@@ -563,9 +723,9 @@ This action creates a \emph{File} in a \emph{Node}. The creator chooses content 
 
 \hfill
 
-This action allows the decker to edit \emph{Accounts} of a \emph{Nodes}. This
-includes removing, adding and changing \emph{Access Levels}. In the case of adding
-a new \emph{Accounts} the respective SIN is required.
+This action allows the decker to edit \emph{Access Rights} of a \emph{Nodes}. This
+includes removing, adding and changing \emph{Access Rights}. In the case of adding
+a new \emph{Account} the respective SIN is required.
 
 \myparagraph{Edit Logs}
 \label{par:edit logs}
@@ -1031,10 +1191,10 @@ another \emph{Action}, whichever happens later.
 \label{par:break}
 
 \begin{tabular}{rl}
-    \textbf{Program}       & Hacking(Break)                               \\
-    \textbf{Prerequisite}  & \emph{Read File}                             \\
-    \textbf{Test Modifier} & - Crypt Rating -3                            \\
-    \textbf{Duration}      & $10 * \textit{max}(1, \textit{5fN})$ seconds \\
+    \textbf{Program}       & Hacking(Break)                                   \\
+    \textbf{Prerequisite}  & \emph{Read File}                                 \\
+    \textbf{Test Modifier} & - Crypt Rating -3                                \\
+    \textbf{Duration}      & $10 \cdot \textit{max}(1, \textit{5fN})$ seconds \\
 \end{tabular}
 
 \hfill
@@ -1110,64 +1270,31 @@ While the \emph{Node} is rebooting all \emph{Processes} are \emph{Stopped}, all
 After the \emph{Reboot} all \emph{Matrix Damage} to \emph{Processes}, \emph{Files}
 and \emph{Streams} is removed.
 
-\myparagraph{Jack Out}
-\index{Jack Out}
-
-\myparagraph{Data Search}
+\paragraph{Data Search}
 \index{Data Search}
 
-\subsection{Security Tally}
-\index{Security Tally}
+\paragraph{Jack Out}
+\index{Jack Out}
 
-\begin{table}[htb]
-    \rowcolors{1}{}{lightgray}
-    \caption[Security Tally Measures]{Security Tally Measures}
-    \label{tab:tally measures}
-    \centering
-    \begin{tabular}{cl}
-        \toprule
-        \textbf{Tally} & \textbf{Measure}   \\
-        \midrule
-        \textbf{5}     & Analyze ICE        \\
-        \textbf{10}    & Trace ICE          \\
-        \textbf{15}    & Silent Alert       \\
-        \textbf{20}    & Combat ICE         \\
-        \textbf{25}    & Active Alert       \\
-        \textbf{50}    & Emergency Shutdown \\
-        \bottomrule
-    \end{tabular}
-\end{table}
+The \emph{Jack Out Action} is required to prevent \emph{Dump Shock}. As most
+\emph{Matrix Access Methods} are at least a little and sometimes extremely
+immersive and taxing on the brain, and are thus requiring this Action to safely
+log off. The \emph{Action} itself is a simple \emph{Mental Composure Test} that
+takes 5 seconds independent of \emph{Matrix Access Method}.
+
+Disconnecting from the Matrix without \emph{Jacking Out} results in
+\emph{Dump Shock} which can happen in an a number of situations like an
+\emph{Emergency Shutdown}
 
 
-\paragraph{Analyze ICE}
+\subparagraph{Dump Shock}
+\index{Dump Shock}
 
-Analyze ICE is looking into a deckers activities to find any signs of illegal
-actions. If it finds anything it will be added to the deckers security tally.
+The decker takes:
 
-\paragraph{Trace ICE}
-
-Trace ICE will try to find the deckers location by analyzing its \emph{Stream}.
-
-\paragraph{Passive Alert}
-In silent or passive Alert Status a list of predefined personnel is informed
-of a possible intrusion. The Node diverts resources to security purposes,
-increasing Firewall by 2 and decreasing Processor by 2. Any standard functionality
-of the Node could be impaired by this resource transfer (GM discretion).
-The information is not broadcasted to Processes in the Node.
-
-\paragraph{Combat ICE} Combat ICE will continuously attack the decker till it
-is crashed and restart afterwards to attack again.
-
-
-\paragraph{Active Alert}
-
-In active Alert Status a list of predefined personnel is informed of an intrusion.
-The Node diverts resources to security purposes, increasing Firewall
-by 3 and decreasing Processor by 3. Any standard functionality of the Node can
-be impaired by this resource transfer (GM discretion).
-The information is broadcasted to all Processes in the Node.
-
-\paragraph{Shutdown}
+\begin{equation}
+    \textit{damage} = (10 \cdot \textit{Mental Pip}
+\end{equation}
 
 \section{Electronic Warfare}
 

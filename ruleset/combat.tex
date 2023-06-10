@@ -1,1 +1,188 @@
 \chapter{Combat}
+
+\section{Timing}
+
+\subsection{Resolution Order}
+
+In Pink Trenchcoat combat is resolved by continuous, always increasing time value.
+
+\paragraph{Tick}
+\index{Tick}
+This time value is measured in \emph{Ticks}. A \emph{Tick} is
+a time measure of about 0.3 seconds.
+
+\paragraph{Current Tick}
+\index{Current Tick}
+Combat continuously advances the \emph{Current Tick} that represents the the current
+point in time.
+
+\paragraph{Initiative Score}
+\index{Initiative Score}
+The\ emph{Initiative Score} represents the \emph{Current Tick} in which a
+\emph{Character} can \emph{declare} and take \emph{Actions}.
+Ties in \emph{Initiative Score} are broken by the \emph{Characters Reflex} value.
+
+\paragraph{Phase}
+\index{Phase}
+A \emph{Phase} lasts 20 \emph{Ticks}. Each Phase, this means on \emph{Current Tick }
+20,40,80 and so on \emph{Continuous Effects} like fire,
+toxin damage and bleeding are resolved.
+
+\paragraph{Combat Flow}
+\index{Declare Action}
+\index{Resolve Action}
+Characters who's \emph{Initiative Score} matches the \emph{Current Tick}
+are allowed to \emph{declare} an \emph{Action}. An \emph{Action} that would
+increase a \emph{Character's Initiative Score} to greater than the
+
+\begin{equation}
+    \textit{Maximum Initiative Score} = \textit{Current Tick} + 20
+\end{equation}
+
+can not be declared.
+
+After \emph{declaring} an \emph{Action}, if no \emph{Interrupts} occur, the
+\emph{Action} is \emph{resolved}. Finally, once the \emph{Character} has taken an
+\emph{Action}, their \emph{Initiative Score} is increased by a value
+depending on the \emph{Action}.
+
+When all eligible \emph{Characters} have taken their \emph{Actions}, the
+\emph{Current Tick} is advanced to the next meaningful value which is normally
+either the next lowest \emph{Initiative Score} of a \emph{Character}, the next
+\emph{Phase} if there are any \emph{Continuous Effects} to \emph{resolve} or the
+\emph{Tick} a \emph{Character} in \emph{Delay} wants to \emph{act}.
+
+
+\paragraph{Interrupt}
+Instead or in addition to acting on their \emph{Initiative Score}, a \emph{Character}
+can also chose to \emph{interrupt} another \emph{Character} in their
+\emph{Initiative Score}. After a \emph{Character} declared their \emph{Action},
+but before it was \emph{resolved}, the \emph{interrupting Character} can 
+\emph{declare} their \emph{interrupting Action}.
+The \emph{Interrupting Action} can itself be interrupted by a
+\emph{Character} that has not yet declared an \emph{Action} this Tick.
+
+A \emph{Reflex Test} decides the order in which \emph{Characters} taking part in
+the \emph{Interrupt} are \emph{resolving} their \emph{Actions}. Each \emph{Character} 
+receives a \emph{Modifier} equal to:
+
+\begin{equation}
+    \textit{Interrupt Modifier} = \textit{Current Tick} - \textit{Initiative Score}
+\end{equation}
+
+\emph{Actions} are \emph{resolved} starting from the highest \emph{Test Quality} 
+to the lowest. Ties are broken first by lowest \emph{Initiative Score}, then by 
+\emph{Reflex} value.
+
+
+\subsection{Starting Combat}
+
+\paragraph{Reflex}
+
+\paragraph{Surprise}
+
+\subsection{Combat Actions}
+
+\subsubsection{Action Times}
+
+\paragraph{Free Action}
+
+\paragraph{Simple Action}
+
+\paragraph{Half Action}
+
+\paragraph{Full Action}
+
+\subsubsection{Non-Actions}
+
+\paragraph{Delay}
+
+\paragraph{Move}
+
+\paragraph{Overwatch}
+
+\subsubsection{Continuous Inclusie Actions}
+
+\paragraph{Leadership}
+
+\paragraph{Tactics}
+
+\subsubsection{General Actions}
+
+\paragraph{Change Facing}
+
+\paragraph{Change Posture}
+
+\paragraph{Change Stance}
+
+\paragraph{Extinguish Fire}
+
+\paragraph{Ready Weapon}
+
+\paragraph{Reload Weapon}
+
+\paragraph{Sprint}
+
+\paragraph{Talk}
+
+\paragraph{Zigzag}
+
+\subsubsection{Ranged Actions}
+
+\paragraph{Aim}
+
+\paragraph{Brace Weapon}
+
+\paragraph{Fast Ranged Attack}
+
+\paragraph{Burst Ranged Attack}
+
+\paragraph{Multi Ranged Attack}
+
+\paragraph{Ranged Attack}
+
+\paragraph{Suppression Fire}
+
+\subsubsection{Melee Actions}
+
+\paragraph{Advance}
+
+\paragraph{Charge}
+
+\paragraph{Disarm}
+
+\paragraph{Disengange}
+
+\paragraph{Feint}
+
+\paragraph{Fast Melee Attack}
+
+\paragraph{Melee Attack}
+
+\paragraph{Multi Melee Attack}
+
+\paragraph{Power Attack}
+
+\paragraph{Precise Strike}
+
+\subsubsection{General Reactions}
+
+\paragraph{Dodge}
+
+\subsubsection{Melee Reactions}
+
+\paragraph{Disarm}
+
+\paragraph{Free Strike}
+
+\paragraph{Masterful Parry}
+
+\paragraph{Parry}
+
+\paragraph{Riposte}
+
+\section{Hit Resolution}
+
+\subsection{Hit Location}
+
+\subsection{Damage}

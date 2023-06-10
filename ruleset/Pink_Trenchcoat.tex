@@ -34,6 +34,8 @@
 \definecolor{darkgray}{gray}{0.8}
 \color{darkgray}
 
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
 
 %\usepackage{fetamont}
 %\usepackage[T1]{fontenc}
@@ -68,6 +70,7 @@
 \include{combat}
 \include{computers}
 \include{magic}
+\include{spells_and_powers}
 
 \cleardoublepage
 \addcontentsline{toc}{chapter}{List of Tables}
@@ -77,9 +80,33 @@
 \printindex
 
 \begin{appendix}
-  \chapter{Combat Tables}
-
+  \chapter{Game Tables}
   \onecolumn
+
+
+  \begin{table}[htb]
+    \rowcolors{1}{}{lightgray}
+    \caption[Ranges]{Ranges}
+    \label{tab:ranges}
+    \centering
+    \begin{tabular}{lcl}
+      \toprule
+      \textbf{Range} & \textbf{Range} \\
+      \midrule
+      1 cm           & 50 m           \\
+      2 cm           & 100 m          \\
+      5 cm           & 200 m          \\
+      10 cm          & 500 m          \\
+      20 cm          & 1 km           \\
+      50 cm          & 2 km           \\
+      1 m            & 5 km           \\
+      2 m            & 10 km          \\
+      5 m            & 20 km          \\
+      10 m           & 50 km          \\
+      20 m           & 100 km         \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
 
 
   \begin{table}[htb]
