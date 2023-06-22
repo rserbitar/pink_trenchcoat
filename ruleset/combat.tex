@@ -31,6 +31,8 @@ toxin damage and bleeding are resolved.
 \paragraph{Combat Flow}
 \index{Declare Action}
 \index{Resolve Action}
+\index{Maximum Initiative Score}
+\label{par:maximum initiative score}
 Characters who's \emph{Initiative Score} matches the \emph{Current Tick}
 are allowed to \emph{declare} an \emph{Action}. An \emph{Action} that would
 increase a \emph{Character's Initiative Score} to greater than the
@@ -41,10 +43,9 @@ increase a \emph{Character's Initiative Score} to greater than the
 
 can not be declared.
 
-After \emph{declaring} an \emph{Action}, if no \emph{Interrupts} occur, the
-\emph{Action} is \emph{resolved}. Finally, once the \emph{Character} has taken an
-\emph{Action}, their \emph{Initiative Score} is increased by a value
-depending on the \emph{Action}.
+After \emph{declaring} an \emph{Action} the \emph{Characters} \emph{Initiative Score}
+is immediately increased by a value depending on the \emph{Action}. If no
+\emph{Interrupts} occur, the \emph{Action} is \emph{resolved}.
 
 When all eligible \emph{Characters} have taken their \emph{Actions}, the
 \emph{Current Tick} is advanced to the next meaningful value which is normally
@@ -55,59 +56,219 @@ either the next lowest \emph{Initiative Score} of a \emph{Character}, the next
 
 \paragraph{Interrupt}
 Instead or in addition to acting on their \emph{Initiative Score}, a \emph{Character}
-can also chose to \emph{interrupt} another \emph{Character} in their
-\emph{Initiative Score}. After a \emph{Character} declared their \emph{Action},
-but before it was \emph{resolved}, the \emph{interrupting Character} can 
-\emph{declare} their \emph{interrupting Action}.
+can also chose to \emph{interrupt} another \emph{Character} after \emph{declaring} an
+\emph{Action}. After a \emph{Character} declared their \emph{Action} and
+increased their \emph{Initiative Score},
+but before it was \emph{resolved}, the \emph{interrupting Character} can
+\emph{declare} their \emph{interrupting Action} (and also immediately increase their
+\emph{Initiative Score}).
 The \emph{Interrupting Action} can itself be interrupted by a
-\emph{Character} that has not yet declared an \emph{Action} this Tick.
+\emph{Character} that has not yet declared an \emph{Action} this \emph{Tick}.
 
 A \emph{Reflex Test} decides the order in which \emph{Characters} taking part in
-the \emph{Interrupt} are \emph{resolving} their \emph{Actions}. Each \emph{Character} 
+the \emph{Interrupt} are \emph{resolving} their \emph{Actions}. Each \emph{Character}
 receives a \emph{Modifier} equal to:
 
 \begin{equation}
     \textit{Interrupt Modifier} = \textit{Current Tick} - \textit{Initiative Score}
 \end{equation}
 
-\emph{Actions} are \emph{resolved} starting from the highest \emph{Test Quality} 
-to the lowest. Ties are broken first by lowest \emph{Initiative Score}, then by 
-\emph{Reflex} value.
+In addition, the following \emph{Modifiers} apply:
+\begin{table}[htb]
+    \rowcolors{1}{}{lightgray}
+    \caption[Interrupt Modifiers]{Interrupt Modifiers}
+    \label{tab:interrupt modifiers}
+    \centering
+    \begin{tabular}{cl}
+        \toprule
+        \textbf{Modifier} & \textbf{Situation}                                \\
+        \midrule
+        \textbf{+9}       & \emph{Overwatch Action} triggered                 \\
+        \textbf{+3}       & \emph{Aiming} or \emph{Watching} \emph{Character} \\
+        \textbf{-3}       & per level of \emph{Interruption}                  \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
+\emph{Actions} are \emph{resolved} starting from the highest \emph{Test Quality}
+to the lowest. Ties are broken first by lowest \emph{Initiative Score}, then by
+\emph{Reflex} value.
 
 \subsection{Starting Combat}
 
-\paragraph{Reflex}
+Once the Game Master decides that the Game should transition from
+\emph{Narrative Time} to \emph{Combat Time}, the \emph{Characters} starting
+\emph{Initiative Score} needs to be determined. To do so, each Character rolls
+a \emph{Reflex Test}. The negative \emph{Test Quality} determines the initial
+\emph{Initiative Score}.
 
-\paragraph{Surprise}
+Apply the following \emph{Modifiers}:
 
-\subsection{Combat Actions}
+\begin{table}[htb]
+    \rowcolors{1}{}{lightgray}
+    \caption[Surprise Modifiers]{Surprise Modifiers}
+    \label{tab:surprise modifiers}
+    \centering
+    \begin{tabular}{cl}
+        \toprule
+        \textbf{Modifier} & \textbf{Character State}        \\
+        \midrule
+        \textbf{+6}       & Initiated first \textit{Action} \\
+        \textbf{0}        & Actively anticipating combat    \\
+        \textbf{-3}       & Suspicious                      \\
+        \textbf{-6}       & Not expecting combat            \\
+        \textbf{-9}       & Deeply involved                 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
-\subsubsection{Action Times}
+\section{Combat Actions}
+
+\subsection{Action Times}
+To reduce cognitive load, \emph{Action Times} are separated into four categories.
+Depending
+on the \emph{Character} and their \emph{Attribute}values, these \emph{Actions} take
+a different amount of \emph{Ticks} to fulfil.
 
 \paragraph{Free Action}
+\index{Free Action}
+\emph{Free Actions} are the shortest kind of \emph{Action}. They require no or almost no thoughts
+and can be executed almost immediately.
 
 \paragraph{Simple Action}
+\index{Simple Action}
+A \emph{Simple Action} can still be done quickly, or be triggered by reflex, but is
+not instant.
 
 \paragraph{Half Action}
+\index{Half Action}
+\emph{Half Actions }are the standard basic Action.
 
 \paragraph{Full Action}
+\index{Full Action}
+\emph{Actions} taking a lot of concentration or a lot of time.
 
-\subsubsection{Non-Actions}
+\subsection{Meta-Actions}
+
+Meta Actions are different compared to normal Actions in a sense that they do not
+follow the typical scheme of Declaration, Initiative Score increase and Resolution.
 
 \paragraph{Delay}
+\index{Delay}
+A \emph{delaying} Character does not have a \emph{Initiative Score}, but can chose to
+\emph{act} at any future \emph{Current Tick} and thus immediately gets the
+\emph{Current Tick} assigned as \emph{Initiative Score}, before \emph{declaring }
+the \emph{Action}. They have to do so before
+any other \emph{Character} \emph{declared} an \emph{Action} in that \emph{Tick}.
+If another \emph{Character} already \emph{declared} an \emph{Action},
+the \emph{delaying} \emph{Character} can still chose to \emph{act},
+but will need to perform an \emph{Interrupt}.
 
-\paragraph{Move}
+After performing any \emph{Action}, \emph{delay} ends.
+
+\paragraph{Watch}
+\index{Watch}
+When \emph{declaring Watch} a \emph{Character} has to chose a suitable
+\emph{Character} or object to \emph{watch}. The \emph{Character} immediately loses
+their \emph{Initiative Score}. The watching Character is granted a bonus of
+
+A \emph{Character} can switch from \emph{Watch} to \emph{Delay} at any time.
 
 \paragraph{Overwatch}
+\index{Overatch}
+When \emph{declaring Overwatch} a \emph{Character} has to chose both a
+\emph{specific Condition} and a \emph{specific Action}. The \emph{Character}
+immediately loses their \emph{Initiative Score}.
 
-\subsubsection{Continuous Inclusie Actions}
+Once the \emph{specific Condition} is fulfilled, even if in \emph{declaration} the
+\emph{Character} immediately performs the \emph{specific Action}. The \emph{Character}
+is assigned an \emph{Initiative Score} according to the \emph{Current Tick}
+plus the value depending on the \emph{Action} and \emph{Overwatch} ends.
+If \emph{specific Condition} was declared by another \emph{Character} an
+\emph{Interrupt} is triggered. The \emph{Character} on \emph{Overwatch} receives
+a +9 \emph{Modifier} for the \emph{Reflex Test} in this case.
+
+\emph{Specific Conditions} should not be too complex and should be easily
+identified as true by the \emph{Character} on \emph{Overwatch} with the current
+situation.
+
+\emph{Specific Actions} can only be \emph{Active Actions}.
+
+A \emph{Character} can switch from \emph{Overwatch} to \emph{Delay} at any time.
+
+\paragraph{Move}
+\index{Move Action}
+Normal movement, like crawling, walking or running, can be performed in addition
+to \emph{Active Actions}. However, if of another \emph{Action} is performed while
+moving, a \emph{Movement Modifier} is applied.
+
+The \emph{Movement Modifier}, as well as the distance moved depend both on the
+movement style as well as the duration of the movement, which is represent by the
+\emph{Action Time}.
+
+A \emph{Move Action} can only performed in addition to an\emph{ Active Action}
+if the \emph{Action} does not include movement.
+\begin{table}[htb]
+    \rowcolors{1}{}{lightgray}
+    \caption[Movement Modifiers]{Movement Modifiers}
+    \label{tab:movement modifiers}
+    \centering
+    \begin{tabular}{cl}
+        \toprule
+        \textbf{Modifier} & \textbf{Movement Style} \\
+        \midrule
+        \textbf{-6}       & Crawl                   \\
+        \textbf{-1}       & Walk                    \\
+        \textbf{-3}       & Run                     \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\paragraph{Ongoing Actions}
+\index{Onging Action}
+
+\emph{Ongoing Actions} represent \emph{Actions} that take, longer than 20
+\emph{Ticks}, sometimes considerably longer. They are represented by increasing
+the \emph{Initiative Score} of the \emph{Character} performing the \emph{Action}
+by 20 if the \emph{Character} wants to continue doing the \emph{Ongoing Action},
+till it is finished.
+
+\subsection{Continuous Inclusive Actions}
 
 \paragraph{Leadership}
 
 \paragraph{Tactics}
 
+\subsection{Active Actions}
+\index{Active Action}
+
 \subsubsection{General Actions}
+
+
+\paragraph{Free Actions}
+Free Actions without specific rules include:
+\begin{itemize}[parsep=0em]
+    \item dropping an objects
+\end{itemize}
+
+\paragraph{Simple Actions}
+Simple Actions without specific rules include:
+\begin{itemize}[parsep=0em]
+    \item drop to the ground
+\end{itemize}
+
+\paragraph{Half Actions}
+Half Actions without specific rules include:
+\begin{itemize}[parsep=0em]
+    \item dropping an objects
+\end{itemize}
+
+\paragraph{Full Actions}
+Full Actions without specific rules include:
+\begin{itemize}[parsep=0em]
+    \item perform a \emph{Perception Test}
+\end{itemize}
+
 
 \paragraph{Change Facing}
 
@@ -164,6 +325,17 @@ to the lowest. Ties are broken first by lowest \emph{Initiative Score}, then by
 \paragraph{Power Attack}
 
 \paragraph{Precise Strike}
+
+\subsection{Reactions}
+\index{Reaction}
+
+In contrast to \emph{Actions}, \emph{Reactions} are \emph{declared} as a reaction
+towards an \emph{Action} of another \emph{Character} or an event in the game world.
+No \emph{Interrupt} is required to \emph{declare} them. Most \emph{Reactions} define
+precisely how they interact with the triggering \emph{Action}.
+
+Apart from this, \emph{Reactions} are normal \emph{Actions} with all rules and
+limitations, especially the \emph{Maximum Initiative Score}.
 
 \subsubsection{General Reactions}
 
