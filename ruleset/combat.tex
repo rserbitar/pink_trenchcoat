@@ -4,7 +4,8 @@
 
 \subsection{Resolution Order}
 
-In Pink Trenchcoat combat is resolved by continuous, always increasing time value.
+In Pink Trenchcoat combat is resolved by a continuous, always increasing
+time value.
 
 \paragraph{Tick}
 \index{Tick}
@@ -204,10 +205,12 @@ moving, a \emph{Movement Modifier} is applied.
 
 The \emph{Movement Modifier}, as well as the distance moved depend both on the
 movement style as well as the duration of the movement, which is represent by the
-\emph{Action Time}.
+\emph{Action Time}. The Character moves a number of meters according to their
+relevant \emph{Movement Rate} and \emph{Action Time}.
 
-A \emph{Move Action} can only performed in addition to an\emph{ Active Action}
+A \emph{Move Action} can only performed in addition to an \emph{Active Action}
 if the \emph{Action} does not include movement.
+
 \begin{table}[htb]
     \rowcolors{1}{}{lightgray}
     \caption[Movement Modifiers]{Movement Modifiers}
@@ -220,6 +223,30 @@ if the \emph{Action} does not include movement.
         \textbf{-6}       & Crawl                   \\
         \textbf{-1}       & Walk                    \\
         \textbf{-3}       & Run                     \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\paragraph{Talk}
+\index{Talk Action}
+
+When a \emph{Character} is talking wile performing a \emph{Test}, the \emph{Test}
+receives an additional -1 \emph{Modifier}.
+\begin{table}[htb]
+    \rowcolors{1}{}{lightgray}
+    \caption[Talk]{Talk}
+    \label{tab:talk}
+    \centering
+    \begin{tabular}{cl}
+        \toprule
+        \textbf{Action} & \textbf{Words}    \\
+        \midrule
+        \textbf{Free}   & 1 Word            \\
+        \textbf{Simple} & Short sentence    \\
+        \textbf{Half}   & 2 Short sentences \\
+                        & 1 Long sentence   \\
+        \textbf{Full}   & 4 short sentences \\
+                        & 2 Long sentences  \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -242,67 +269,305 @@ till it is finished.
 \subsection{Active Actions}
 \index{Active Action}
 
+\emph{Active Actions} are \emph{Actions} a \emph{Character} \emph{declares} when
+their \emph{Initiative Score} matches the \emph{Current Tick}. They are the
+default action type.
+
 \subsubsection{General Actions}
 
-
 \paragraph{Free Actions}
+\index{Free Action}
 Free Actions without specific rules include:
 \begin{itemize}[parsep=0em]
-    \item dropping an objects
+    \item dropping an object
+    \item change facing 90°
 \end{itemize}
 
 \paragraph{Simple Actions}
+\index{Simple Action}
 Simple Actions without specific rules include:
 \begin{itemize}[parsep=0em]
-    \item drop to the ground
+    \item \item change facing 180°
 \end{itemize}
 
 \paragraph{Half Actions}
+\index{Half Action}
 Half Actions without specific rules include:
 \begin{itemize}[parsep=0em]
-    \item dropping an objects
+    \item change stance
 \end{itemize}
 
 \paragraph{Full Actions}
+\index{Full Action}
 Full Actions without specific rules include:
 \begin{itemize}[parsep=0em]
     \item perform a \emph{Perception Test}
+    \item perform a \emph{Jump Test}
 \end{itemize}
 
 
-\paragraph{Change Facing}
+\myparagraph{Change Posture}
+\index{Change Posture}
+\begin{tabular}{rl}
+    \textbf{Action} & Half              \\
+    \textbf{Test}   & None/Acrobatics-6 \\
+\end{tabular}
 
-\paragraph{Change Posture}
+\hfill
 
-\paragraph{Change Stance}
+Change posture from:
+\begin{itemize}[parsep=0em]
+    \item standing to crouching
+    \item crouching to prone
+    \item standing to prone
+    \item prone to crouching
+    \item crouching to standing
+\end{itemize}
 
-\paragraph{Extinguish Fire}
+Changing two levels at once (in this case only prone to standing)
+requires an \emph{Acrobatics -6 Test}.
 
-\paragraph{Ready Weapon}
+\myparagraph{Drop Down}
+\index{Drop Down}
+\begin{tabular}{rl}
+    \textbf{Action} & Free \\
+    \textbf{Test}   & None \\
+\end{tabular}
 
-\paragraph{Reload Weapon}
+\hfill
 
-\paragraph{Sprint}
+Dropping down from a standing posture. After doing so, the \emph{Character} is
+\emph{disoriented}.
 
-\paragraph{Talk}
+\myparagraph{Ready Weapon}
+\index{Ready Weapon}
+\begin{tabular}{rl}
+    \textbf{Action} & var.           \\
+    \textbf{Test}   & None/Quickdraw \\
+\end{tabular}
 
-\paragraph{Zigzag}
+\hfill
+
+Ready a weapon given that the weapon is carried on the \emph{Character}.
+A weapon needs to be ready to perform any \emph{Actions} with it.
+
+\begin{table}[htb]
+    \rowcolors{1}{}{lightgray}
+    \caption[Ready Weapon]{Ready Weapon}
+    \label{tab:ready weapon}
+    \centering
+    \begin{tabular}{llc}
+        \toprule
+        \textbf{Weapon}   & \textbf{Action} & \textbf{Test} \\
+        \midrule
+        \textbf{2 handed} & Full            & None          \\
+        \textbf{2 handed} & Half            & Quickdraw -8  \\
+        \textbf{2 handed} & Simple          & Quickdraw -16 \\
+        \textbf{1 handed} & Half            & None          \\
+        \textbf{1 handed} & Simple          & Quickdraw -8  \\
+        \textbf{1 handed} & Free            & Quickdraw -16 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\myparagraph{Reload Weapon}
+\index{Reload Weapon}
+\begin{tabular}{rl}
+    \textbf{Action} & var. \\
+    \textbf{Test}   & None \\
+\end{tabular}
+
+\hfill
+
+Reloads a weapon given that ammunition is carried on the \emph{Character}.
+Reload time depends on the weapon.
+
+\myparagraph{Sprint}
+\index{Sprint}
+\begin{tabular}{rl}
+    \textbf{Action} & Full    \\
+    \textbf{Test}   & Running \\
+\end{tabular}
+
+\hfill
+
+Move number of meters equal to the \emph{Characters} \emph{Full Running Rate}.
+Add 1 meter for every 2 \emph{Test Quality } of the \emph{Running Test}.
+
+
+\myparagraph{Zigzag}
+\index{Zigzag}
+
+\begin{tabular}{rl}
+    \textbf{Action} & Full \\
+    \textbf{Test}   & None \\
+\end{tabular}
+The \emph{Character} moves a number of meters equal to half their
+\emph{Running Rate}. All attackers get the “Running 90° to Attacker”
+\emph{Modifier}. Using the \emph{Zigzag Action} is not possible when
+carrying an \emph{unwieldy} weapon and not exceeding its
+\emph{Required Strength} by 3.
 
 \subsubsection{Ranged Actions}
+\index{Ranged Action}
 
-\paragraph{Aim}
+\emph{Ranged Actions} are specific to ranged combat.
+
+\myparagraph{Aim}
+\begin{tabular}{rl}
+    \textbf{Action} & Half/Full \\
+    \textbf{Test}   & None      \\
+    \textbf{Damage} & No        \\
+\end{tabular}
+
+\hfill
+
+The \emph{Character} aims at a target in their \emph{Front} or \emph{Side Arc}.
+The gain a +1 \emph{Modifier} for all \emph{Ranged Actions} that do
+\emph{Damage} on the aimed target. This Action can be taken multiple times till a
+maximum Modifier of +4 is reached.
+\emph{Aiming} with a \emph{Full Action} counts as \emph{aiming} 3 times.
+
+Equipment modifies aiming as follows:
+
+\begin{itemize}[parsep=0em]
+    \item A Red Dot/Smartgun conveys a +2 \emph{Modifier} for the
+          first \emph{Aim Action}
+    \item A Rangefinder conveys a +2 \emph{Modifier} for the second
+          \emph{Aim Action}
+    \item A Scope allows for a maximum \emph{Modifier} of +6
+    \item A Gun Light reduces emph{Visual Modifiers} for the target if the
+          target is in range
+\end{itemize}
+
+The \emph{Aim Modifier} is lost when the target moves out of
+sight or the \emph{Character} takes any other \emph{Action} than:
+
+\begin{itemize}[parsep=0em]
+    \item any Free Action
+    \item any Ranged Action
+    \item any Processing Test
+    \item any Empathy Test
+    \item Talk
+    \item Walk
+\end{itemize}
 
 \paragraph{Brace Weapon}
+\index{Brace Weapon}
+\begin{tabular}{rl}
+    \textbf{Action} & Full/Half \\
+    \textbf{Test}   & None      \\
+    \textbf{Damage} & No        \\
+\end{tabular}
 
-\paragraph{Fast Ranged Attack}
+\hfill
 
-\paragraph{Burst Ranged Attack}
+A \emph{Character} braces their two handed ranged weapon against a suitable
+object like a sandbag a window sill or a railing. The \emph{Weapon Range} is
+doubled for all \emph{Ranged Attacks} against targets in the \emph{Characters}
+\emph{Front Arc} with a height difference no greater than 1/4th of the distance.
 
-\paragraph{Multi Ranged Attack}
+The \emph{Required Strength} of the weapon is also reduced by 3.
 
-\paragraph{Ranged Attack}
+If the weapon is equipped with a bipod, bracing takes only a \emph{Half Action}
+and the height difference can be 1/3rd of the distance.
 
-\paragraph{Suppression Fire}
+Weapons equipped with a tripod take a \emph{Full Action} to \emph{brace},
+which means they are effectively deployed. In this case \emph{bracing} is not
+lost when the \emph{Character} moves, if the \emph{Character} choses to let go of
+their weapon. \emph{Changing Facing} and \emph{Posture} is also possible without
+losing the \emph{braced} effect. The maximum height difference is 1/2nd.
+
+Bracing for non tripod-weapons is lost when the \emph{Character} moves in any way
+(also as a result of a \emph{Dodge}, changes facing or changes posture).
+
+\myparagraph{Fast Ranged Attack}
+\index{Fast Ranged Attack}
+
+\begin{tabular}{rl}
+    \textbf{Action} & Half              \\
+    \textbf{Test}   & Ranged Weapons -3 \\
+    \textbf{Damage} & Yes               \\
+\end{tabular}
+
+\hfill
+
+The \emph{Character} performs a \emph{Ranged Attack} with a -3 \emph{Modifier}.
+Weapons with the \emph{Single Shot} keyword can not perform this \emph{Action}.
+
+
+\myparagraph{Burst Ranged Attack}
+\index{Burst Ranged Attack}
+
+\begin{tabular}{rl}
+    \textbf{Action} & Full                 \\
+    \textbf{Test}   & Ranged Weapons +2/+3 \\
+    \textbf{Damage} & Yes                  \\
+\end{tabular}
+
+\hfill
+
+The \emph{Character} performs a \emph{Ranged Attack} with a weapon that has a
+\emph{Short Burst} or \emph{Long Burst} value. Short Bursts add a +2
+\emph{Modifier}, Long Bursts a +3 \emph{Modifier}. For \emph{Damage Resolution}
+multiply both \emph{Armor} of the target and \emph{Penetration} of the weapon
+with 2 (Short Burst) or 3 (Long Burst).
+
+Burst \emph{Ranged Attacks} can have an increased \emph{Required Strength}.
+
+\myparagraph{Multi Ranged Attack}
+\index{Multi Ranged Attack}
+
+\begin{tabular}{rl}
+    \textbf{Action} & Full                             \\
+    \textbf{Test}   & Ranged Weapons -2/-1 per attack, \\
+                    & -1 per additional target         \\
+    \textbf{Damage} & Yes                              \\
+\end{tabular}
+
+\hfill
+
+The \emph{Character} is performing multiple \emph{Ranged Attacks} against one or
+more targets. Only one Test is rolled by the Character, modified by -2 per
+attack and -1 per additional target. This value is opposed by
+all targets individually.
+
+This \emph{Action} is only possible with one handed ranged weapons that do
+not have the \emph{Single Shot} keyword. Wielding two ranged weapons decreases
+the attack \emph{Modifier} to -1 and allow for 2 attacks even with
+\emph{Single Shot} weapons.
+
+\myparagraph{Ranged Attack}
+\index{Ranged Attack}
+\begin{tabular}{rl}
+    \textbf{Action} & Full              \\
+    \textbf{Test}   & Ranged Weapons +0 \\
+    \textbf{Damage} & Yes               \\
+\end{tabular}
+
+\hfill
+
+The \emph{Character} performs a standard \emph{Ranged Attack}.
+
+
+\myparagraph{Suppression Fire}
+\index{Suppression Fire}
+\begin{tabular}{rl}
+    \textbf{Action} & Full \\
+    \textbf{Test}   & No   \\
+    \textbf{Damage} & No   \\
+\end{tabular}
+
+The \emph{Characters} suppresses an area with \emph{Suppression Fire}.
+The attacker can cover a length of meters equal to the number of bullets of the
+weapons \emph{Suppression Fire} value. Everybody moving through the suppressed
+zone or not going prone/into cover while being in it is hit with a final
+\emph{Test Quality} of d10. Add +1 to the result if a target is crossing the
+area. The suppressed zone lasts till the \emph{Characters} \emph{Initiative Score}.
+
+\emph{Suppression Fire} can not be used if the\emph{Required Strength} of the
+weapon is not met by the \emph{Character}.
 
 \subsubsection{Melee Actions}
 
@@ -339,7 +604,22 @@ limitations, especially the \emph{Maximum Initiative Score}.
 
 \subsubsection{General Reactions}
 
-\paragraph{Dodge}
+\myparagraph{Dodge}
+\begin{tabular}{rl}
+    \textbf{Action} & Half/Simple/Free \\
+    \textbf{Test}   & Dodge-2/-3/-4    \\
+\end{tabular}
+
+\hfill
+
+The \emph{Character} is dodging an incoming \emph{Attack Action} that the
+\emph{Character} is aware of, turning the attack into an \emph{opposed Test}.
+
+The \emph{Character} can chose to drop to the ground while \emph{dodging},
+adding a +2 \emph{Modifier} but also being \emph{disoriented} afterwards.
+
+If the \emph{Character} is not dropping down, they may chose to move 1 meter
+for for every 3 points of \emph{Test Quality}.
 
 \subsubsection{Melee Reactions}
 
