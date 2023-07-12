@@ -347,10 +347,10 @@ bigger a \emph{Device} the higher its rating is on average.
         \toprule
         \textbf{Entity}    & \textbf{Processor} \\
         \midrule
-        \textbf{Gadget}    & 0-4                \\
-        \textbf{Commlink}  & 3-8                \\
-        \textbf{Cyberdeck} & 6-13               \\
-        \textbf{Mainframe} & 8-21               \\
+        \textbf{Gadget}    & 0--4               \\
+        \textbf{Commlink}  & 3--8               \\
+        \textbf{Cyberdeck} & 6--13              \\
+        \textbf{Mainframe} & 8--21              \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -391,11 +391,11 @@ Firewall Ratings are often given by a color coding.
         \toprule
         \textbf{Color}        & \textbf{Firewall} \\
         \midrule
-        \textbf{Blue}         & 0-4               \\
-        \textbf{Green}        & 5-9               \\
-        \textbf{Orange}       & 10-14             \\
-        \textbf{Red}          & 15-19             \\
-        \textbf{Ultra Violet} & 20-21             \\
+        \textbf{Blue}         & 0--4              \\
+        \textbf{Green}        & 5--9              \\
+        \textbf{Orange}       & 10--14            \\
+        \textbf{Red}          & 15--19            \\
+        \textbf{Ultra Violet} & 20--21            \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -1030,7 +1030,7 @@ To read the content one needs either the key or try to \emph{Break} the encrypti
 \begin{tabular}{rl}
     \textbf{Program}       & Computer(Find)                                  \\
     \textbf{Prerequisite}  & \emph{Access} to origin/destination \emph{Node} \\
-    \textbf{Test Modifier} & - Target \emph{Sleaze}                          \\
+    \textbf{Test Modifier} & -Target \emph{Sleaze}                           \\
     \textbf{Duration}      & 10s                                             \\
 \end{tabular}
 
@@ -1046,7 +1046,7 @@ origin or the destination.
 \begin{tabular}{rl}
     \textbf{Program}       & Computer(Find)                                  \\
     \textbf{Prerequisite}  & \emph{Access} to origin/destination \emph{Node} \\
-    \textbf{Test Modifier} & - Target \emph{Sleaze}                          \\
+    \textbf{Test Modifier} & -Target \emph{Sleaze}                           \\
     \textbf{Duration}      & 10s                                             \\
 \end{tabular}
 
@@ -1061,7 +1061,7 @@ origin or the destination.
 \begin{tabular}{rl}
     \textbf{Program}       & Computer(Find)                                  \\
     \textbf{Prerequisite}  & \emph{Access} to origin/destination \emph{Node} \\
-    \textbf{Test Modifier} & - Target \emph{Sleaze}                          \\
+    \textbf{Test Modifier} & -Target \emph{Sleaze}                           \\
     \textbf{Duration}      & 10s                                             \\
 \end{tabular}
 
@@ -1084,7 +1084,7 @@ damaging or slowing them. Most of the time, \emph{Processor} is an important
     \textbf{Prerequisite}  & \emph{Accessed} \emph{Node}          \\
                            & \emph{File AID} or \emph{Stream AID} \\
                            & or Found [\emph{File}/\emph{Stream}] \\
-    \textbf{Test Modifier} & - Originating \emph{Node} System     \\
+    \textbf{Test Modifier} & -Originating \emph{Node} System      \\
     \textbf{Duration}      & 1s                                   \\
 \end{tabular}
 
@@ -1111,7 +1111,7 @@ The increase is given by:
 \begin{tabular}{rl}
     \textbf{Program}       & Cyber Combat(Crash)                \\
     \textbf{Prerequisite}  & Found [\emph{Node}/\emph{Process}] \\
-    \textbf{Test Modifier} & - System                           \\
+    \textbf{Test Modifier} & -System                            \\
     \textbf{Duration}      & 1s                                 \\
 \end{tabular}
 
@@ -1154,7 +1154,7 @@ to the target.
 \begin{tabular}{rl}
     \textbf{Program}       & Cyber Combat(Slow)           \\
     \textbf{Prerequisite}  & \emph{Access} to \emph{Node} \\
-    \textbf{Test Modifier} & - System                     \\
+    \textbf{Test Modifier} & -System                      \\
     \textbf{Duration}      & 1s                           \\
 \end{tabular}
 
@@ -1172,7 +1172,7 @@ later.
 \begin{tabular}{rl}
     \textbf{Program}       & Cyber Combat(Slow)          \\
     \textbf{Prerequisite}  & Found \emph{Process} or AID \\
-    \textbf{Test Modifier} & - System                    \\
+    \textbf{Test Modifier} & -System                     \\
     \textbf{Duration}      & 1s                          \\
 \end{tabular}
 
@@ -1193,7 +1193,7 @@ another \emph{Action}, whichever happens later.
 \begin{tabular}{rl}
     \textbf{Program}       & Hacking(Break)                                   \\
     \textbf{Prerequisite}  & \emph{Read File}                                 \\
-    \textbf{Test Modifier} & - Crypt Rating -3                                \\
+    \textbf{Test Modifier} & -Crypt Rating -3                                 \\
     \textbf{Duration}      & $10 \cdot \textit{max}(1, \textit{5fN})$ seconds \\
 \end{tabular}
 
@@ -1224,7 +1224,7 @@ In addition each \emph{Exploit Test} can increase the deckers \emph{Security Tal
 The increase is given by:
 
 \begin{equation*}
-    \textit{Tally} = max(0, \textit{5fN} + \textit{System} - \textit{Sleaze})
+    \textit{Tally} = \max(0, \textit{5fN} + \textit{System} - \textit{Sleaze})
 \end{equation*}
 
 \begin{table}[htb]
@@ -1293,7 +1293,7 @@ Disconnecting from the Matrix without \emph{Jacking Out} results in
 The decker takes:
 
 \begin{equation}
-    \textit{damage} = (10 \cdot \textit{Mental Pip}
+    \textit{damage} = 10 \cdot \textit{Mental Pip}
 \end{equation}
 
 \section{Electronic Warfare}
