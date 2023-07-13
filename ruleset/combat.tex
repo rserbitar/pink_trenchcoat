@@ -528,9 +528,9 @@ Burst \emph{Ranged Attacks} can have an increased \emph{Required Strength}.
 \hfill
 
 The \emph{Character} is performing multiple \emph{Ranged Attacks} against one or
-more targets. Only one Test is rolled by the Character, modified by -2 per
-attack and -1 per additional target. This value is opposed by
-all targets individually.
+more targets. Only one \emph{Test} is rolled by the \emph{Character},
+\emph{modified} by -2 per attack and -1 per additional target.
+This value is opposed by all targets individually.
 
 This \emph{Action} is only possible with one handed ranged weapons that do
 not have the \emph{Single Shot} keyword. Wielding two ranged weapons decreases
@@ -558,6 +558,8 @@ The \emph{Character} performs a standard \emph{Ranged Attack}.
     \textbf{Damage} & No   \\
 \end{tabular}
 
+\hfill
+
 The \emph{Characters} suppresses an area with \emph{Suppression Fire}.
 The attacker can cover a length of meters equal to the number of bullets of the
 weapons \emph{Suppression Fire} value. Everybody moving through the suppressed
@@ -569,26 +571,158 @@ area. The suppressed zone lasts till the \emph{Characters} \emph{Initiative Scor
 weapon is not met by the \emph{Character}.
 
 \subsubsection{Melee Actions}
+\index{Melee Action}
 
-\paragraph{Advance}
+\myparagraph{Advance}
+\index{Advance}
 
-\paragraph{Charge}
+\begin{tabular}{rl}
+    \textbf{Action} & Full                    \\
+    \textbf{Test}   & \emph{Melee Weapons} +3 \\
+    \textbf{Damage} & Optional                \\
+\end{tabular}
 
-\paragraph{Disarm}
+\hfill
 
-\paragraph{Disengange}
+The target of this \emph{Melee Attack} must retreat 1 meter for every two points
+of \emph{Test Quality}, or be hit with the \emph{Test Quality}. If the target
+choses to retreat, the \emph{Character} \emph{advances} the same number of meters.
 
-\paragraph{Feint}
+\myparagraph{Charge}
+\index{Charge}
 
-\paragraph{Fast Melee Attack}
+\begin{tabular}{rl}
+    \textbf{Action} & Full                    \\
+    \textbf{Test}   & \emph{Melee Weapons} -2 \\
+    \textbf{Damage} & Yes                     \\
+\end{tabular}
 
-\paragraph{Melee Attack}
+\hfill
 
-\paragraph{Multi Melee Attack}
+This \emph{Action} requires the \emph{Character} to run in a straight line to the
+target using their \emph{Run Rate}. If the Melee Attack is successful the
+\emph{Character} can add 1 point for every 2 meters crossed to the weapon damage.
 
-\paragraph{Power Attack}
 
-\paragraph{Precise Strike}
+\myparagraph{Disarm}
+\index{Disarm Action}
+
+\begin{tabular}{rl}
+    \textbf{Action} & Full                       \\
+    \textbf{Test}   & \emph{Melee Weapons} -3 -X \\
+    \textbf{Damage} & No                         \\
+\end{tabular}
+
+\hfill
+
+If this \emph{Melee Attack} is successful, an additional opposed
+\emph{Strength Test} is performed with a \emph{Modifier} of X for
+the \emph{Character}. If the \emph{Character} wins this \emph{Test}, the target
+is disarmed.
+
+\myparagraph{Disengage}
+\index{Disengage}
+
+\begin{tabular}{rl}
+    \textbf{Action} & Full                 \\
+    \textbf{Test}   & \emph{Melee Weapons} \\
+    \textbf{Damage} & No                   \\
+\end{tabular}
+
+\hfill
+
+If this \emph{Action} is successful, the \emph{Character} can move a number of
+meters equal to their \emph{Walking Rate} without risking a \emph{Free Strike}
+from the target.
+
+\myparagraph{Feint}
+\index{Feint}
+
+\begin{tabular}{rl}
+    \textbf{Action} & Full                    \\
+    \textbf{Test}   & \emph{Melee Weapons} +3 \\
+    \textbf{Damage} & No                      \\
+\end{tabular}
+
+\hfill
+
+If this \emph{Action} is successful, the \emph{Character} receives a +3
+\emph{Modifier} for the next \emph{Melee Action} against the target.
+
+\myparagraph{Fast Melee Attack}
+\index{Fast Melee Attack}
+
+\begin{tabular}{rl}
+    \textbf{Action} & Half                    \\
+    \textbf{Test}   & \emph{Melee Weapons} -3 \\
+    \textbf{Damage} & Yes                     \\
+\end{tabular}
+
+\hfill
+
+The \emph{Character} is making a \emph{Melee Attack}.
+
+\myparagraph{Melee Attack}
+\index{Melee Attack}
+
+\begin{tabular}{rl}
+    \textbf{Action} & Full                 \\
+    \textbf{Test}   & \emph{Melee Weapons} \\
+    \textbf{Damage} & Yes                  \\
+\end{tabular}
+
+\hfill
+
+The \emph{Character} is making a \emph{Melee Attack}.
+
+\myparagraph{Multi Melee Attack}
+\index{Multi Melee Attack}
+
+\begin{tabular}{rl}
+    \textbf{Action} & Full                                   \\
+    \textbf{Test}   & \emph{Melee Weapons} -2/-1 per attack, \\
+                    & -1 per additional target               \\
+    \textbf{Damage} & Yes                                    \\
+\end{tabular}
+
+\hfill
+
+The \emph{Character} is performing multiple \emph{Melee Attacks} against one or
+more targets. Only one \emph{Test} is rolled by the \emph{Character},
+\emph{modified} by -2 per attack and -1 per additional target.
+This value is opposed by all targets individually.
+
+Wielding two melee weapons decreases the attack \emph{Modifier} to -1 for
+attacking a single target multiple times, while a double handed weapon decreases
+the attack \emph{Modifier} to -1 for attacking multiple targets once (still
+adding  -1 for each additional target).
+
+\myparagraph{Power Attack}
+\index{Power Attack}
+
+\begin{tabular}{rl}
+    \textbf{Action} & Full                    \\
+    \textbf{Test}   & \emph{Melee Weapons} -2 \\
+    \textbf{Damage} & Yes                     \\
+\end{tabular}
+
+\hfill
+
+The target gets an additional negative \emph{Modifier} of twice the
+\emph{Strength} difference between the \emph{Character} and the target.
+
+\myparagraph{Precise Strike}
+\index{Precise Strike}
+
+\begin{tabular}{rl}
+    \textbf{Action} & Full                    \\
+    \textbf{Test}   & \emph{Melee Weapons} -2 \\
+    \textbf{Damage} & Yes                     \\
+\end{tabular}
+
+\hfill
+
+If successful, this \emph{Action} adds 2X to the \emph{Melee Attack Test Quality}.
 
 \subsection{Reactions}\index{Reaction}
 
@@ -621,15 +755,86 @@ for for every 3 points of \emph{Test Quality}.
 
 \subsubsection{Melee Reactions}
 
-\paragraph{Disarm}
+\myparagraph{Disarm}
+\index{Disarm Reaction}
 
-\paragraph{Free Strike}
+\begin{tabular}{rl}
+    \textbf{Action} & Full                       \\
+    \textbf{Test}   & \emph{Melee Weapons} -3 -X \\
+    \textbf{Damage} & No                         \\
+\end{tabular}
 
-\paragraph{Masterful Parry}
+\hfill
 
-\paragraph{Parry}
+The \emph{Character} is opposing a \emph{Melee Attack}. If this \emph{Reaction}
+is successful, not only is the attack avoided, but an
+additional opposed \emph{Strength Test} is performed with a \emph{Modifier}
+of X for the \emph{Character}. If the \emph{Character} wins this \emph{Test},
+the target is disarmed.
 
-\paragraph{Riposte}
+\myparagraph{Free Strike}
+\index{Free Strike}
+
+\begin{tabular}{rl}
+    \textbf{Action} & Half                 \\
+    \textbf{Test}   & \emph{Melee Weapons} \\
+    \textbf{Damage} & Yes                  \\
+\end{tabular}
+
+\hfill
+
+The \emph{Character} performs a \emph{Melee Attack} against a target that is
+moving out of their \emph{Control Area}.
+
+
+\myparagraph{Masterful Parry}
+\index{Masterful Parry}
+
+\begin{tabular}{rl}
+    \textbf{Action} & Half                       \\
+    \textbf{Test}   & \emph{Melee Weapons} -1 -X \\
+    \textbf{Damage} & No                         \\
+\end{tabular}
+
+\hfill
+
+The \emph{Character} is opposing a \emph{Melee Attack}. If this \emph{Action} is
+successful, the \emph{Character} is getting a +X \emph{Modifier} for their next
+\emph{Action} against the attacker.
+
+\myparagraph{Parry}
+\index{Parry}
+
+\begin{tabular}{rl}
+    \textbf{Action} & Half/Simple/Free             \\
+    \textbf{Test}   & \emph{Melee Weapons} 0/-1/-2 \\
+    \textbf{Damage} & No                           \\
+\end{tabular}
+
+\hfill
+
+The \emph{Character} is opposing a \emph{Melee Attack}.
+
+\myparagraph{Riposte}
+\index{Riposte}
+
+\begin{tabular}{rl}
+    \textbf{Action} & Full                    \\
+    \textbf{Test}   & \emph{Melee Weapons} -3 \\
+    \textbf{Damage} & No                      \\
+\end{tabular}
+
+\hfill
+
+The \emph{Character} is opposing a \emph{Melee Attack}. If the \emph{Riposte} is
+successful the attacker is themselves hit and needs to resolve a
+hit with the \emph{Test Quality} of the \emph{Riposte Action}.
+
+\section{Attack Resolution}
+
+\subsection{Ranged Combat}
+
+\subsection{Melee Combat}
 
 \section{Hit Resolution}
 

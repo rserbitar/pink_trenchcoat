@@ -943,7 +943,7 @@ to carry out. The standard format of a \emph{Test} is given as:
 \begin{tabular}{rl}
     \textbf{Program}       & Computer(Analyze)                   \\
     \textbf{Prerequisite}  & Found [Node, Process, Stream, File] \\
-    \textbf{Test Modifier} & - Target \emph{Sleaze}              \\
+    \textbf{Test Modifier} & -Target \emph{Sleaze}               \\
     \textbf{Duration}      & 2s                                  \\
 \end{tabular}
 
@@ -1102,7 +1102,7 @@ In addition each \emph{Corrupt Test} that can increase the deckers
 The increase is given by:
 
 \begin{equation*}
-    \textit{Tally} = max(0, \textit{5fN} + \textit{System} - \textit{Sleaze})
+    \textit{Tally} = \max(0, \textit{5fN} + \textit{System} - \textit{Sleaze})
 \end{equation*}
 
 \myparagraph{Crash}
@@ -1125,7 +1125,7 @@ can increase the deckers \emph{Security Tally}.
 The increase is given by:
 
 \begin{equation*}
-    \textit{Tally} = max(0, 2 * \textit{5fN} + \textit{System} - \textit{Sleaze})
+    \textit{Tally} = \max(0, 2 * \textit{5fN} + \textit{System} - \textit{Sleaze})
 \end{equation*}
 
 \myparagraph{Repair}
@@ -1191,10 +1191,10 @@ another \emph{Action}, whichever happens later.
 \label{par:break}
 
 \begin{tabular}{rl}
-    \textbf{Program}       & Hacking(Break)                                   \\
-    \textbf{Prerequisite}  & \emph{Read File}                                 \\
-    \textbf{Test Modifier} & -Crypt Rating -3                                 \\
-    \textbf{Duration}      & $10 \cdot \textit{max}(1, \textit{5fN})$ seconds \\
+    \textbf{Program}       & Hacking(Break)                             \\
+    \textbf{Prerequisite}  & \emph{Read File}                           \\
+    \textbf{Test Modifier} & -Crypt Rating -3                           \\
+    \textbf{Duration}      & \(10 \cdot \max(1, \textit{5fN})\) seconds \\
 \end{tabular}
 
 \hfill
